@@ -1,0 +1,29 @@
+
+// Loading Icon
+// ---------------------------------------+
+//
+
+@keyframes loading-anim {
+	100%   { transform: rotate(360deg) }
+}
+
+.loader-overlay {
+	background: $black-transparent;
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.loader-spinner {
+	animation: loading-anim 0.5s steps(6) infinite;
+	background: url($image-path+'/loading.png') center center no-repeat;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}

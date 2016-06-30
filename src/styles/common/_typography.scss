@@ -1,0 +1,36 @@
+
+// Base Typography
+// ---------------------------------------+
+//
+body {
+	color: $text-default;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 1.2;
+	font-family: $font-family-default;
+}
+
+a {
+	color: $green;
+	text-decoration: none;
+
+	&:focus,
+	&:hover {
+		color: $green-bright;
+		outline: none;
+	}
+}
+
+strong {
+	font-family: $font-family-bold;
+}
+
+h3 {
+	font-family: $font-family-light;
+	font-size: 24px;
+	font-weight: 400;
+}
+
+p {
+	margin-bottom: 20px;
+}

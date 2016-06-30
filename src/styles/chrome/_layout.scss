@@ -1,0 +1,14 @@
+html {
+	// overflow-x: hidden;
+}
+
+body {
+	background: $white;
+	min-width: $mobile-width;
+	overflow-x: hidden;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: $desktop-width;
+}

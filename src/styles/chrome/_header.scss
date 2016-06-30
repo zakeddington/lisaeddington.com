@@ -1,0 +1,105 @@
+
+// Header
+// ---------------------------------------+
+//
+
+header {
+	background: $black;
+	height: 60px;
+	position: relative;
+	text-align: center;
+
+	.container {
+		position: relative;
+	}
+
+	h1 {
+		color: $white;
+		display: inline-block;
+		font-family: $font-family-light;
+		font-size: 36px;
+		font-weight: 300;
+		letter-spacing: -1.5px;
+		line-height: 60px;
+		margin: 0 auto;
+	}
+
+	ul {
+		height: 24px;
+		position: absolute;
+		top: 18px;
+
+		&.nav {
+			left: 15px;
+		}
+
+		&.social {
+			right: 15px;
+		}
+
+		li {
+			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+
+			a {
+				color: $white;
+				display: block;
+				font-size: 14px;
+				font-weight: 400;
+				height: 100%;
+				line-height: 24px;
+				overflow: hidden;
+				text-transform: uppercase;
+				transition: all $anim-speed ease-out;
+				width: 30px;
+
+				&:before {
+					background: center center no-repeat;
+					background-size: contain;
+					content: '';
+					display: inline-block;
+					height: 100%;
+					opacity: 0.7;
+					transition: all $anim-speed ease-out;
+					vertical-align: middle;
+					width: 100%;
+				}
+
+				&:hover,
+				&:focus {
+					&:before {
+						opacity: 1;
+					}
+				}
+
+				&.tumblr {
+					&:before {
+						background-image: url($image-path+'/logo-tumblr.png');
+					}
+				}
+
+				&.instagram {
+					&:before {
+						background-image: url($image-path+'/logo-instagram.png');
+					}
+				}
+
+				&.etsy {
+					&:before {
+						background-image: url($image-path+'/logo-etsy.png');
+					}
+				}
+
+				&.about {
+					margin-right: 10px;
+					width: auto;
+
+					&:before {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

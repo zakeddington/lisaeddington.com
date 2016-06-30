@@ -1,0 +1,48 @@
+
+// Utility Classes
+// ------------------------------------------+
+//
+
+.clearfix {
+	@include clearfix();
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.offscreen {
+	@include offscreen();
+}
+
+.hidden {
+	display: none !important;
+}
+
+.hide-text {
+	@include hide-text();
+}
+
+@include breakpoint(mobile) {
+	.hide-mobile {
+		display: none !important;
+	}
+}
+@include breakpoint(tablet) {
+	.hide-tablet {
+		display: none !important;
+	}
+}
+@include breakpoint(desktop) {
+	.hide-desktop {
+		display: none !important;
+	}
+}
