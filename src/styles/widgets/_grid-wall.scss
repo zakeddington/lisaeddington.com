@@ -45,21 +45,6 @@
 // ---------------------------------------+
 //
 
-
-.overlay {
-	display: none;
-	position: fixed;
-	background: $white-transparent;
-	height: 100%;
-	left: 0;
-	top: 0;
-	width: 100%;
-
-	&.active {
-		display: block;
-	}
-}
-
 .grid-wall {
 	display: flex;
 	flex-wrap: wrap;
@@ -72,10 +57,10 @@
 		align-items: center;
 		display: flex;
 		height: 0;
-		// overflow: hidden;
+		overflow: hidden;
 		position: relative;
 		padding-top: 33.333%;
-		// transition: all $anim-speed ease-out;
+		// transition: all 1s ease-out;
 		width: 33.333%;
 
 		@include breakpoint(mobile) {
@@ -90,181 +75,49 @@
 			padding: 5%;
 			position: absolute;
 			top: 0;
+			width: 100%;
+		}
+
+		.modal-trigger {
+			background: left center no-repeat;
+			background-size: contain;
+			border-radius: 50%;
+			display: block;
+			height: 100%;
+			overflow: hidden;
 			transition: all $anim-speed ease-out;
 			width: 100%;
 
-			.close {
-				display: none;
-				// transition: all $anim-speed ease-out;
-
-				&:before,
-				&:after {
-					opacity: 0;
-					transform: rotate(0);
-					transition: all $anim-speed ease-out;
-					transition-delay: 1s;
-				}
-			}
-
-			.open {
-				// filter: grayscale(1);
-				background: left center no-repeat;
+			.item-info {
+				background: rgba($black, 0.6);
 				border-radius: 50%;
-				display: block;
+				display: flex;
 				height: 100%;
-				// left: 5%;
-				overflow: hidden;
-				position: relative;;
-				// top: 5%;
+				opacity: 0;
 				transition: all $anim-speed ease-out;
-				// transform: rotate(45deg);
 				width: 100%;
 
-				.item-info {
-					background: $black-transparent;
-					border-radius: 50%;
+				h3 {
+					color: $white;
+					align-items: center;
 					display: flex;
-					height: 100%;
-					opacity: 0;
-					transition: all $anim-speed ease-out;
-					width: 100%;
-
-					h3 {
-						color: $white;
-						align-items: center;
-						display: flex;
-						margin: auto;
-						text-align: center;
-					}
+					margin: auto;
+					text-align: center;
 				}
 
-				&:hover,
-				&:focus {
-					filter: grayscale(1);
-					// transform: scale(1.08);
-
-					.item-info {
-						opacity: 1;
-					}
+				p {
+					display: none;
 				}
 			}
 
-			&.active {
-				// height: 900px;
-				padding: 0;
-				// width: 900px;
-				z-index: 1;
-				transform: scale(2);
+			&:hover,
+			&:focus {
+				filter: grayscale(1);
 
-				.open {
-					border-radius: 0;
-					filter: grayscale(0);
-					background-size: contain;
-
-					.item-info {
-						background: none;
-					}
-				}
-
-				.close {
-					@include hide-text();
-					display: block;
-					height: 50px;
-					position: absolute;
-					right: 0;
-					top: 0;
-					width: 50px;
-					// opacity: 1;
-
-					&:before,
-					&:after {
-						background: black;
-						content: '';
-						display: block;
-						height: 100%;
-						left: 50%;
-						opacity: 1;
-						position: absolute;
-						top: 0;
-						width: 2px;
-					}
-
-					&:before {
-						transform: rotate(45deg);
-					}
-
-					&:after {
-						transform: rotate(-45deg);
-					}
+				.item-info {
+					opacity: 1;
 				}
 			}
 		}
-	}
-}
-
-// Modal Window
-// -----------------------------------------------------
-//
-
-.modal-window {
-
-	.media-photo {
-		display: block;
-		text-align: center;
-
-		img {
-			margin: auto;
-		}
-	}
-
-	p {
-		margin-bottom: 30px;
-	}
-
-	&.text {
-		padding: 30px;
-	}
-
-	&.media {
-		background: $white;
-		color: $black;
-	}
-
-	.grid-wall--photo,
-	.grid-wall--video {
-		left: 0;
-		position: relative;
-		top: 0;
-	}
-
-	.grid-wall--popstar,
-	.grid-wall--tweet {
-		padding-bottom: 40px;
-
-		&:after {
-			bottom: 0;
-			left: 0;
-		}
-	}
-
-	.grid-wall--title {
-		font-family: $font-family-bold;
-		font-size: 50px;
-	}
-
-	.grid-wall--short-desc {
-		display: none;
-	}
-
-	.grid-wall--desc {
-		display: block;
-		font-size: 20px;
-	}
-
-	.grid-wall--author {
-		bottom: 0;
-		font-size: 20px;
-		margin-bottom: 0;
-		right: 0;
 	}
 }

@@ -1,10 +1,10 @@
 /**
  * Photo/Video Modal Window
- * 
+ *
  * @description
  * - Display Photo/Video in a modal window
  * - Photo/Video is referenced via data attr on trigger
- * 		
+ *
  * @requires ModalWindow (base class)
  * @requires jQuery imagesLoaded plugin
  * @requires Handlebars (and template)
@@ -24,7 +24,7 @@ import tplModalMedia from 'templates/modal-media.hbs';
 import ModalWindow   from 'widgets/ModalWindow';
 
 class ModalMedia extends ModalWindow {
-	
+
 	initialize( selectorTrigger, objOptions ) {
 		/**
 		 * Default configuration for component
@@ -38,7 +38,7 @@ class ModalMedia extends ModalWindow {
 
 		super.initialize( selectorTrigger, this.options );
 	}
-	
+
 	_getContent() {
 		this._setContent();
 	}
@@ -48,25 +48,30 @@ class ModalMedia extends ModalWindow {
 	 * Display the content in the modal window
 	 */
 	_setContent() {
-		var gridContent = this.ui.curTrigger.children(),
-			mediaHtml,
-			data = {
-				type      : this.options.type,
-				mediaPath : this.ui.curTrigger.data( this.options.dataAttrMedia )
-			};
-		
+		var self          = this,
+			$cloneContent = this.ui.curTrigger.children().clone(),
+			bgImage       = this.ui.curTrigger.css('background-image');
+
 		// Create modal content container
 		this.ui.content = $('<div/>', {
 			'class': this.options.contentClass
 		}).appendTo( this.ui.modal );
-		
-		mediaHtml = this.options.template( data );
-		
-		this.ui.content.append( mediaHtml );
 
-		gridContent.clone().appendTo( this.ui.content );
-		
+
+		this.ui.image = $('<div/>', {
+			'class' : 'item-image',
+			'title' : 'click to close'
+		}).css('background-image', bgImage).appendTo( this.ui.content );
+
+		this.ui.content.append( $cloneContent );
+
 		this.ui.content.appendTo( this.ui.modal );
+
+		this.ui.image.on('click.' + this.instance.namespace, function() {
+			if ( self.state.isOpen ) {
+				self._closeModal();
+			}
+		});
 	}
 }
 

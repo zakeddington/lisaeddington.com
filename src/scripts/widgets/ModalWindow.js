@@ -1,9 +1,9 @@
 /**
  * Modal Window
- * 
+ *
  * @description
  * - Display content (href target) in a modal window
- *         
+ *
  * @requires jQuery
  * @requires AppConfig
  * @requires AppEvents
@@ -24,20 +24,20 @@ import AppEvents from 'config/AppEvents';
 import Loader    from 'utilities/Loader';
 
 class ModalWindow {
-	
+
 	constructor( triggerSelector, objOptions ) {
 		this.initialize( triggerSelector, objOptions );
 	}
-	
+
 	initialize( triggerSelector, objOptions ) {
-	
+
 		/**
 		 * Default configuration for component
 		 */
 		this.options = $.extend({
 			ariaHideElements  : '#wrapper, body > iframe',   // elements to add attribute aria-hidden=true when modal is open
-			modalID           : 'modal',                     // id of the modal window container 
-			modalClass        : 'modal-window',              // class of the modal window container 
+			modalID           : 'modal',                     // id of the modal window container
+			modalClass        : 'modal-window',              // class of the modal window container
 			contentClass      : 'modal-content',             // class of the content container in the modal
 			modalOverlayID    : 'modal-overlay',             // id of the overlay
 			closeBtnClass     : 'modal-close',               // class of the close button
@@ -79,7 +79,7 @@ class ModalWindow {
 			curIndex          : null,     // current index of the trigger element
 			winScrollTop      : null
 		};
-		
+
 		this._initialize( triggerSelector );
 	}
 
@@ -146,7 +146,7 @@ class ModalWindow {
 		this.ui.curTrigger = $( event.currentTarget );
 
 		this.state.curIndex = this.ui.triggers.index( this.ui.curTrigger );
-		
+
 		this._openModal();
 	}
 
@@ -158,31 +158,31 @@ class ModalWindow {
 		$.event.trigger( this.options.customEventPrfx + ':preOpenModal' );
 
 		this.state.winScrollTop = this.ui.window.scrollTop();
-		
+
 		if ( !this.ui.body.hasClass('modal-open') ) {
 			this.ui.body.addClass('modal-open').css({position: 'fixed', top: this.state.winScrollTop * -1});
 		}
 		this.ui.modal.attr( 'aria-hidden', 'false' );
 		this.ui.ariaHideElements.attr( 'aria-hidden', 'true' );
-		
+
 		this.instance.contentLoader.addLoader();
-		
+
 		this.ui.overlay.show();
 		// this.ui.modal.show();
-				
+
 		this._addEventHandlers();
 		this._getContent();
 
 		// Set open bool
 		this.state.isOpen = true;
-		
-		// Set focus and fade in content 
+
+		// Set focus and fade in content
 		this.instance.contentLoader.removeLoader();
 		this.ui.overlay.addClass( this.options.activeClass );
 		this.ui.modal.addClass( this.options.activeClass );
-		
+
 		this.ui.closeButton.focus();
-		
+
 		// Fire custom event
 		$.event.trigger( this.options.customEventPrfx + ':modalOpened' );
 	}
@@ -192,26 +192,26 @@ class ModalWindow {
 	 */
 	_closeModal() {
 		var self = this;
-		
+
 		this.ui.window.scrollTop(this.state.winScrollTop);
-		
+
 		if ( this.ui.body.hasClass('modal-open') ) {
 			this.ui.body.removeClass('modal-open').removeAttr('style');
 		}
 		this.ui.modal.attr( 'aria-hidden', 'true' );
 		this.ui.ariaHideElements.attr( 'aria-hidden', 'false' );
-		
+
 		this.ui.overlay.hide();
 		// this.ui.modal.hide();
-		
+
 		this._removeEventHandlers();
-					
+
 		// Reset focus, remove content and fire custom event
 		this.ui.overlay.removeClass( this.options.activeClass ).removeAttr('style');
 		this.ui.modal.removeClass( this.options.activeClass ).removeAttr('style');
 		this.ui.curTrigger.focus();
 		this.state.isOpen = false;
-		
+
 		self.ui.modal.empty();
 
 		$.event.trigger( this.options.customEventPrfx + ':ModalClosed' );
@@ -228,20 +228,9 @@ class ModalWindow {
 		this.ui.closeButton.attr('href', '#close');
 		this.ui.closeButton.attr('title', this.options.closeBtnText );
 		this.ui.closeButton.text( this.options.closeBtnText );
-		this.ui.closeButton.append(
-			'<span class="item one-1"></span>' +
-			'<span class="item one-2"></span>' +
-			'<span class="item one-3"></span>' +
-			'<span class="item two-1"></span>' +
-			'<span class="item two-2"></span>' +
-			'<span class="item two-3"></span>' +
-			'<span class="item three-1"></span>' +
-			'<span class="item three-2"></span>' +
-			'<span class="item three-3"></span>'
-		);
 		this.ui.modal.prepend( this.ui.closeButton );
 		this.ui.modal.on('click.' + this.instance.namespace, '.' + this.options.closeBtnClass, $.proxy(this._onCloseBtnClick, this));
-		
+
 		this.ui.overlay.on('click.' + this.instance.namespace, function() {
 			if ( self.state.isOpen ) {
 				self._closeModal();
@@ -292,7 +281,7 @@ class ModalWindow {
 	 */
 	_onWindowResize( event ) {
 		if ( this.state.isOpen ) {
-			
+
 		}
 	}
 
@@ -307,7 +296,7 @@ class ModalWindow {
 
 	/**
 	 * Fired from _getContent
-	 * Display the content in the modal window 
+	 * Display the content in the modal window
 	 * This function gets overwritten in sub class modals
 	 * @param {Object}  content - jQuery element
 	 */

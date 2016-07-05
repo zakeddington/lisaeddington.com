@@ -3,11 +3,8 @@
 // ---------------------------------------+
 //
 
-$_btn-close-size : 20px;
-$_modal-padding  : 10px;
-
 #modal-overlay {
-	background: $black-transparent;
+	background: rgba($white, 0.8);
 	display: none;
 	height: 100%;
 	left: 0;
@@ -37,31 +34,27 @@ $_modal-padding  : 10px;
 // Default layout
 .modal-window {
 	backface-visibility: hidden;
-	background: $black;
+	// background: $white;
 	display: block;
 	left: 50%;
 	margin-top: 50px;
-	max-height: calc(90vh);
+	height: 100%;
 	opacity: 0;
+	// padding: 1%;
 	position: fixed;
 	top: 50%;
 	transform: translate(-50%, -50%);
 	transition: all $anim-speed ease-out;
 	transition-delay: 0;
 	visibility: hidden;
-	width: 90%;
+	width: 100%;
 	z-index: 12;
-	
-	@include breakpoint(desktop) {
-		max-width: 800px;
-		width: 100%;
-	}
 
 	&.active {
 		margin-top: 0;
 		opacity: 1;
 		visibility: visible;
-		
+
 		.modal-content {
 			opacity: 1;
 			visibility: visible;
@@ -70,14 +63,40 @@ $_modal-padding  : 10px;
 
 	.modal-content {
 		display: block;
-		max-height: calc(90vh - (#{$_modal-padding} * 2) );
+		height: 100%;
 		opacity: 0;
 		overflow-y: auto;
-		margin: $_modal-padding;
 		position: relative;
 		transition: all $anim-speed;
 		transition-delay: $anim-speed;
 		visibility: hidden;
+		width: 100%;
+
+		.item-image {
+			background: center center no-repeat;
+			background-size: contain;
+			cursor: pointer;
+			display: block;
+			height: 90%;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+
+		.item-info {
+			background: rgba($white, 0.9);
+			bottom: 0;
+			display: block;
+			height: 10%;
+			padding: 10px;
+			position: absolute;
+			text-align: center;
+			width: 100%;
+
+			p {
+				margin: 0;
+			}
+		}
 	}
 }
 
@@ -86,75 +105,41 @@ $_modal-padding  : 10px;
 //
 
 .modal-close {
+	@include hide-text();
 	display: block;
-	height: $_btn-close-size;
-	margin: 0;
-	overflow: hidden;
+	height: 50px;
 	position: absolute;
 	right: 0;
-	text-align: center;
-	text-indent: 100%;
-	top: -35px;
-	width: $_btn-close-size;
-	
-	.item {
-		background-color: $white;
-		cursor: pointer;
+	top: 0;
+	width: 50px;
+	z-index: 1;
+
+	&:before,
+	&:after {
+		background: black;
+		content: '';
 		display: block;
-		height: 4px;
-		position: absolute;
-		transition: all $anim-speed ease-out;
-		width: 4px;
-	}
-
-	.one-1 {
-		left: 0;
-		top: 0;
-	}
-
-	.one-2 {
-		left: 71%;
-		margin-left: -2px;
-		top: 20%;
-	}
-
-	.one-3 {
-		right: 0;
-		top: 0;
-	}
-
-	.two-1 {
-		left: 22%;
-		margin-top: -2px;
-		top: 30%;
-	}
-
-	.two-2 {
+		height: 100%;
 		left: 50%;
-		margin-left: -2px;
-		margin-top: -2px;
-		top: 50%;
+		opacity: 1;
+		position: absolute;
+		top: 0;
+		width: 2px;
 	}
 
-	.two-3 {
-		margin-top: -2px;
-		right: 22%;
-		top: 70%;
+	&:before {
+		transform: rotate(45deg);
 	}
 
-	.three-1 {
-		bottom: 0;
-		left: 0;
+	&:after {
+		transform: rotate(-45deg);
 	}
 
-	.three-2 {
-		bottom: 20%;
-		left: 30%;
-		margin-left: -2px;
-	}
-
-	.three-3 {
-		bottom: 0;
-		right: 0;
+	&:hover,
+	&:focus {
+		&:before,
+		&:after {
+			background: $green;
+		}
 	}
 }

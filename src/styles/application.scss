@@ -10,7 +10,7 @@
 @import 'utils/animations';
 @import 'utils/bp-indicator';
 @import 'utils/classes';
-@import 'utils/grid';
+// @import 'utils/grid';
 @import 'utils/reset';
 
 @import 'common/typography';
@@ -27,4 +27,4 @@
 //
 
 // Grid
-@include generate-grid-classes();
+// @include generate-grid-classes();

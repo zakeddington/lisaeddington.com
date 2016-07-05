@@ -1,11 +1,12 @@
 html {
-	// overflow-x: hidden;
+	overflow-x: hidden;
 }
 
 body {
 	background: $white;
 	min-width: $mobile-width;
-	overflow-x: hidden;
+	// overflow-x: hidden;
+	width: 100%;
 }
 
 .container {

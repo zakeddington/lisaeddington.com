@@ -1,184 +1,86 @@
-{
-	"photos" : [
-		{
-			"type"          : "photo",
-			"title"         : "Photo 1 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/1200/600"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 2 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/1200/700"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 3 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/1200/800"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 4 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/1200/900"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 5 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/1200/1000"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 6 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/1200/1100"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 7 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/1200/1200"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 8 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/600/700"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 9 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/600/800"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 10 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/600/900"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 11 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/600/1000"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 12 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/600/1100"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 13 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/600/1200"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 14 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/1200/600"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 15 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/1200/700"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 16 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/1200/800"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 17 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/1200/900"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 18 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/1200/1000"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 19 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/1200/1100"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 20 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/1200/1200"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 21 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/600/600"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 22 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/600/700"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 23 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/600/800"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 24 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/600/900"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 25 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/600/1000"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 26 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/600/1100"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 27 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/600/1200"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 28 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/1200/600"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 29 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/1200/700"
-		},
-		{
-			"type"          : "photo",
-			"title"         : "Photo 30 Lorem Ipsum Dolor Sit Amet",
-			"description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, nisl ac auctor dictum, felis lacus laoreet quam, id metus.",
-			"image"         : "http://fillmurray.com/1200/800"
-		}
-	]
-}
+[
+	{
+		"filter"        : "filter1",
+		"title"         : "Title of the piece",
+		"description"   : "11×11″ | Pen on paper | 2011",
+		"image"         : "/assets/img/36-eyes.jpg"
+	},
+	{
+		"filter"        : "filter1",
+		"title"         : "Title of the piece",
+		"description"   : "11×11″ | Pen on paper | 2011",
+		"image"         : "/assets/img/bees.jpg"
+	},
+	{
+		"filter"        : "filter1",
+		"title"         : "Title of the piece",
+		"description"   : "11×11″ | Pen on paper | 2011",
+		"image"         : "/assets/img/Blue.jpg"
+	},
+	{
+		"filter"        : "filter1",
+		"title"         : "Title of the piece",
+		"description"   : "11×11″ | Pen on paper | 2011",
+		"image"         : "/assets/img/buffalo.jpg"
+	},
+	{
+		"filter"        : "filter1",
+		"title"         : "Title of the piece",
+		"description"   : "11×11″ | Pen on paper | 2011",
+		"image"         : "/assets/img/carnival.jpg"
+	},
+	{
+		"filter"        : "filter1",
+		"title"         : "Title of the piece",
+		"description"   : "11×11″ | Pen on paper | 2011",
+		"image"         : "/assets/img/cedar.jpg"
+	},
+	{
+		"filter"        : "filter1",
+		"title"         : "Title of the piece",
+		"description"   : "11×11″ | Pen on paper | 2011",
+		"image"         : "/assets/img/chinese-rock.jpg"
+	},
+	{
+		"filter"        : "filter1",
+		"title"         : "Title of the piece",
+		"description"   : "11×11″ | Pen on paper | 2011",
+		"image"         : "/assets/img/come-back.jpg"
+	},
+	{
+		"filter"        : "filter1",
+		"title"         : "Title of the piece",
+		"description"   : "11×11″ | Pen on paper | 2011",
+		"image"         : "/assets/img/deer.jpg"
+	},
+	{
+		"filter"        : "filter1",
+		"title"         : "Title of the piece",
+		"description"   : "11×11″ | Pen on paper | 2011",
+		"image"         : "/assets/img/fiery.jpg"
+	},
+	{
+		"filter"        : "filter1",
+		"title"         : "Title of the piece",
+		"description"   : "11×11″ | Pen on paper | 2011",
+		"image"         : "/assets/img/fish.jpg"
+	},
+	{
+		"filter"        : "filter1",
+		"title"         : "Title of the piece",
+		"description"   : "11×11″ | Pen on paper | 2011",
+		"image"         : "/assets/img/flower.jpg"
+	},
+	{
+		"filter"        : "filter1",
+		"title"         : "Title of the piece",
+		"description"   : "11×11″ | Pen on paper | 2011",
+		"image"         : "/assets/img/fox.jpg"
+	},
+	{
+		"filter"        : "filter1",
+		"title"         : "Title of the piece",
+		"description"   : "11×11″ | Pen on paper | 2011",
+		"image"         : "/assets/img/graphite-flowers.jpg"
+	}
+]

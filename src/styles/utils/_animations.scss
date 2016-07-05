@@ -8,7 +8,7 @@
 }
 
 .loader-overlay {
-	background: $black-transparent;
+	background: rgba($black, 0.6);
 	height: 100%;
 	left: 0;
 	overflow: hidden;

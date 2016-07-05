@@ -19,31 +19,9 @@ const Application = {
 		// Initialize custom events
 		breakpointChange();
 
-		// new GridWall( '.grid-wall', {
-		// 	// options
-		// });
-
-
-		$('.open').on('click', this._onOpenCloseClick);
-		$('.close').on('click', this._onOpenCloseClick);
-	},
-
-	_onOpenCloseClick: function( event ) {
-		event.preventDefault();
-
-		var $curItem = $( event.currentTarget ).parent(),
-			$overlay = $('.overlay');
-
-		$curItem.toggleClass('active');
-		$overlay.toggleClass('active');
-	},
-
-	_onCloseClick: function( event ) {
-		event.preventDefault();
-
-		var $curItem = $( event.currentTarget ).parent();
-
-		$curItem.removeClass('active');
+		new GridWall( '.grid-wall', {
+			// options
+		});
 	}
 };
 
