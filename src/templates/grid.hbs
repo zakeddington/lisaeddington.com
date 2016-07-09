@@ -1,8 +1,13 @@
+
+{{#if intro}}
+<p>{{{intro}}}</p>
+{{/if}}
+
 {{#each items}}
 
 	<div class="item-container">
 		<div class="item">
-			<a href="#" class="modal-trigger" style="background-image: url({{image}});">
+			<a href="#" class="modal-photo-trigger" style="background-image: url({{image}});">
 				<div class="item-info">
 					<h3>{{{title}}}</h3>
 					<p>{{{description}}}</p>

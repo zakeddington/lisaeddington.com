@@ -7,7 +7,6 @@
  *
  * @requires ModalWindow (base class)
  * @requires jQuery imagesLoaded plugin
- * @requires Handlebars (and template)
  *
  * @example
  * new ModalWindow($('.modal-photo-trigger'), {options})
@@ -20,7 +19,6 @@
  *
  */
 
-import tplModalMedia from 'templates/modal-media.hbs';
 import ModalWindow   from 'widgets/ModalWindow';
 
 class ModalMedia extends ModalWindow {
@@ -30,9 +28,6 @@ class ModalMedia extends ModalWindow {
 		 * Default configuration for component
 		 */
 		this.options = $.extend({
-			type            : null,           // 'video' or 'photo'
-			dataAttrMedia   : 'media-path',   // data attr of photo/video path on trigger
-			template        : tplModalMedia,
 			modalID         : 'modal-media'
 		}, objOptions || {});
 

@@ -23,7 +23,6 @@
 import AppConfig  from 'config/AppConfig';
 import AppEvents  from 'config/AppEvents';
 import AjaxGet    from 'utilities/AjaxGet';
-import AjaxPost   from 'utilities/AjaxPost';
 import Loader     from 'utilities/Loader';
 import ModalMedia from 'widgets/ModalMedia';
 import tplGrid    from 'templates/grid.hbs';
@@ -39,16 +38,46 @@ class GridWall {
 		 * Default configuration for component
 		 */
 		this.options = $.extend({
-			dataURL           : '/assets/data/photos.json',
-			dataType          : 'JSON',
-			ajaxUtil          : AjaxGet,
-			template          : tplGrid,              // Handlebars template for grid wall
-			errorMsg          : '<p>Oops. Something went wrong. Please refresh the browser to try again.</p>',
-			selectorItem      : '.item-container',    // selector for each grid item
-			classHidden       : 'is-hidden',          // class for setting hidden states
-			animSpeed         : 0.5,                  // (s) TweenMax animation speed
-			animEase          : 'Quad.easeOut',       // TweenMax animation ease
-			animDelay         : 0.1,                  // (s) animation delay between items
+			dataAPIs        : [
+				{
+					url     : "/assets/data/collages.json",
+					type    : 'JSON',
+					apiUtil : AjaxGet
+				},
+				{
+					url     : "/assets/data/drawings.json",
+					type    : 'JSON',
+					apiUtil : AjaxGet
+				},
+				{
+					url     : "/assets/data/lettering.json",
+					type    : 'JSON',
+					apiUtil : AjaxGet
+				},
+				{
+					url     : "/assets/data/nature.json",
+					type    : 'JSON',
+					apiUtil : AjaxGet
+				},
+				{
+					url     : "/assets/data/paintings.json",
+					type    : 'JSON',
+					apiUtil : AjaxGet
+				},
+				{
+					url     : "/assets/data/sketches.json",
+					type    : 'JSON',
+					apiUtil : AjaxGet
+				}
+			],
+			template        : tplGrid,              // Handlebars template for grid wall
+			errorMsg        : '<p>Oops. Something went wrong. Please refresh the browser to try again.</p>',
+			selectorItem    : '.item-container',    // selector for each grid item
+			selectorFilters : '.nav-filter a',      // selector for category filters
+			classHidden     : 'hidden',             // class for setting hidden states
+			animSpeed       : 0.5,                  // (s) TweenMax animation speed
+			animEase        : 'Quad.easeOut',       // TweenMax animation ease
+			animDelay       : 0.1,                  // (s) animation delay between items
 		}, objOptions || {});
 
 		/**
@@ -58,27 +87,28 @@ class GridWall {
 			document          : $(document),
 			window            : $(window),
 			body              : $('body'),
-			container         : null
+			container         : null,
+			filters           : null
 		};
 
 		/**
 		 * Values specific to current grid wall
 		 */
 		this.instance = $.extend({
-			contentLoader     : null,                  // placeholder for global loading icon utility
-			data              : {
-									allItems   : [],  // initial data to display
-									filter1    : [],  // all photo/video data items
-									filter2    : [],  // all tweet data items
-									filter3    : []   // all popstar data items
-								}
+			contentLoader  : null,                  // placeholder for global loading icon utility
+			dataAll        : {
+				"category" : "all",
+				"intro"    : "",
+				"items"    : []
+			},
+			dataCategories : []
 		}, this.instance || {});
 
 		/**
 		 * Widget states
 		 */
 		this.state = {
-
+			hash : window.location.hash
 		};
 
 		this._initialize( containerSelector );
@@ -90,6 +120,7 @@ class GridWall {
 	 */
 	_initialize( containerSelector ) {
 		this.ui.container = $( containerSelector );
+		this.ui.filters   = $( this.options.selectorFilters );
 
 		// set global loader utility
 		this.instance.contentLoader = new Loader( this.ui.container );
@@ -103,9 +134,8 @@ class GridWall {
 	 * Create our modal widgets for each type of content
 	 */
 	_initModals() {
-		var modal = new ModalMedia( '.modal-trigger', {
-				type       : 'photo',
-				modalClass : 'modal-window'
+		var modal = new ModalMedia( '.modal-photo-trigger', {
+				// options
 			});
 	}
 
@@ -115,56 +145,101 @@ class GridWall {
 	 * Then randomize each array and display initial grid items
 	 */
 	_getContent() {
-		var self = this;
+		var self          = this,
+			arrayPromises = [];
 
-		$.when( this.options.ajaxUtil( this.options.dataURL, this.options.dataType )).done( function( response ) {
+		for ( let dataAPI of this.options.dataAPIs ) {
+			arrayPromises.push(
+				dataAPI.apiUtil( dataAPI.url, dataAPI.type )
+			);
+		}
 
-			// If we're caching the response, do it
-			self.instance.data.allItems = response;
+		this._deferPromises( arrayPromises ).then( function( results ) {
+			for ( let result of results ) {
+				self.instance.dataAll.items  = self.instance.dataAll.items.concat( result.items );
+				self.instance.dataCategories.push( result );
+			}
 
-			// Display the content
-			self._setContent( response );
-			self._displayContent( response );
-
-		}).fail(function() {
-			// If the call failed, show error message
-			self.ui.container.html( self.options.errorMsg );
+			self._shuffleData( self.instance.dataAll.items );
+			self._setInitialResults();
 		});
 	}
 
-	_setContent( dataObj ) {
-		for ( let item of dataObj ) {
-			switch( item.filter ) {
-				case 'filter1' :
-					this.instance.data.filter1.push( item );
-					break;
-				case 'filter2' :
-					this.instance.data.filter2.push( item );
-					break;
-				case 'filter3' :
-					this.instance.data.filter3.push( item );
-					break;
-			}
+	/**
+	 * Defer promises utility
+	 * Process all the requests while skipping over any that fail
+	 * @param  {Array} arrPromises - array of promises to resolve
+	 * @return {Object} promise of all the data returned
+	 */
+	_deferPromises( arrPromises ) {
+		var deferred  = $.Deferred(),
+			results   = [],
+			remaining = arrPromises.length;
+
+		for ( let i in arrPromises ) {
+			arrPromises[i]
+				.then( function( response ) {
+					// on success, add to results
+					results.push( response );
+				})
+				.always( function( response ) {
+					// always mark as finished
+					remaining--;
+					// call it a day, when no more promises are left
+					if ( !remaining ) {
+						deferred.resolve( results );
+					}
+				});
 		}
+		// return a promise on the remaining values
+		return deferred.promise();
 	}
 
 	/**
-	 * Display the initial set of content
+	 * Randomize the combined data array
+	 * Then display the content
+	 */
+	_shuffleData( data ) {
+		var arrData    = data,
+			curIndex   = arrData.length,
+			tempValue,
+			ranIndex;
+
+		// While there remain elements to shuffle...
+		while ( 0 !== curIndex ) {
+			// Pick a remaining element...
+			ranIndex  = Math.floor( Math.random() * curIndex );
+			curIndex -= 1;
+
+			// And swap it with the current element.
+			tempValue         = arrData[curIndex];
+			arrData[curIndex] = arrData[ranIndex];
+			arrData[ranIndex] = tempValue;
+		}
+	}
+
+	_setInitialResults() {
+		this._displayContent( this.instance.dataAll );
+	}
+
+	/**
+	 * Display set of results
 	 */
 	_displayContent( dataObj ) {
 		var self          = this,
 			content       = dataObj,
 			completeCount = 0,
-			html, $items;
+			html, $html, $items;
 
 		if ( this.options.template ) {
-			html   = this.options.template({ items:content });
-			$items = $(html).filter( this.options.selectorItem ).addClass( this.options.classHidden );
+			html   = this.options.template( content );
+			$html  = $(html);
+			$items = $html.filter( this.options.selectorItem ).addClass( this.options.classHidden );
 		}
 
 		this.instance.contentLoader.removeLoader();
 
-		this.ui.container.prepend( $items ).imagesLoaded( { background: this.options.selectorItem }, function() {
+		this.ui.container.prepend( $html ).imagesLoaded( { background: this.options.selectorItem }, function() {
 			$.each( $items, function( index ) {
 				var $curItem    = $(this),
 					$curTrigger = $curItem.find('a');
@@ -181,7 +256,7 @@ class GridWall {
 
 						// Initialize the random rotation of items after grid has rendered
 						if ( completeCount === $items.length ) {
-							
+
 						}
 					}
 				});
@@ -191,8 +266,34 @@ class GridWall {
 		});
 	}
 
-	_addEventListeners() {
+	_removeContent() {
+		this.ui.container.empty();
+	}
 
+	_onFilterClick( event ) {
+		event.preventDefault();
+
+		var $curFilter  = $( event.currentTarget ),
+			curHash     = $curFilter.attr('href'),
+			curCategory = curHash.substring(1);
+
+		window.location.hash = curCategory;
+
+		this._removeContent();
+
+		if ( curCategory === 'all' ) {
+			this._displayContent( this.instance.dataAll );
+		} else {
+			for ( let data of this.instance.dataCategories ) {
+				if ( data.category === curCategory ) {
+					this._displayContent( data );
+				}
+			}
+		}
+	}
+
+	_addEventListeners() {
+		this.ui.filters.on('click', $.proxy(this._onFilterClick, this));
 	}
 }
 

@@ -1,0 +1,76 @@
+{
+	"category" : "paintings",
+	"intro"    : "Paintings lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis ac odio quis sollicitudin. Vivamus dolor nisi, blandit a pellentesque eu, rutrum ac neque. Cras ultrices id sapien sed molestie. Proin ultricies augue eget porta aliquam. Suspendisse molestie nulla sit amet libero aliquam bibendum. Nam tincidunt mollis velit, in viverra neque vulputate quis. Aliquam tincidunt est non auctor tincidunt. Etiam cursus ornare aliquam.",
+	"items"    : [
+		{
+			"title"         : "Painting title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/36-eyes.jpg"
+		},
+		{
+			"title"         : "Painting title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/bees.jpg"
+		},
+		{
+			"title"         : "Painting title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/Blue.jpg"
+		},
+		{
+			"title"         : "Painting title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/buffalo.jpg"
+		},
+		{
+			"title"         : "Painting title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/carnival.jpg"
+		},
+		{
+			"title"         : "Painting title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/cedar.jpg"
+		},
+		{
+			"title"         : "Painting title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/chinese-rock.jpg"
+		},
+		{
+			"title"         : "Painting title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/come-back.jpg"
+		},
+		{
+			"title"         : "Painting title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/deer.jpg"
+		},
+		{
+			"title"         : "Painting title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/fiery.jpg"
+		},
+		{
+			"title"         : "Painting title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/fish.jpg"
+		},
+		{
+			"title"         : "Painting title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/flower.jpg"
+		},
+		{
+			"title"         : "Painting title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/fox.jpg"
+		},
+		{
+			"title"         : "Painting title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/graphite-flowers.jpg"
+		}
+	]
+}

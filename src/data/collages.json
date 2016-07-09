@@ -1,0 +1,76 @@
+{
+	"category" : "collages",
+	"intro"    : "Collages lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis ac odio quis sollicitudin. Vivamus dolor nisi, blandit a pellentesque eu, rutrum ac neque. Cras ultrices id sapien sed molestie. Proin ultricies augue eget porta aliquam. Suspendisse molestie nulla sit amet libero aliquam bibendum. Nam tincidunt mollis velit, in viverra neque vulputate quis. Aliquam tincidunt est non auctor tincidunt. Etiam cursus ornare aliquam.",
+	"items"    : [
+		{
+			"title"         : "Collage title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/36-eyes.jpg"
+		},
+		{
+			"title"         : "Collage title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/bees.jpg"
+		},
+		{
+			"title"         : "Collage title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/Blue.jpg"
+		},
+		{
+			"title"         : "Collage title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/buffalo.jpg"
+		},
+		{
+			"title"         : "Collage title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/carnival.jpg"
+		},
+		{
+			"title"         : "Collage title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/cedar.jpg"
+		},
+		{
+			"title"         : "Collage title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/chinese-rock.jpg"
+		},
+		{
+			"title"         : "Collage title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/come-back.jpg"
+		},
+		{
+			"title"         : "Collage title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/deer.jpg"
+		},
+		{
+			"title"         : "Collage title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/fiery.jpg"
+		},
+		{
+			"title"         : "Collage title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/fish.jpg"
+		},
+		{
+			"title"         : "Collage title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/flower.jpg"
+		},
+		{
+			"title"         : "Collage title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/fox.jpg"
+		},
+		{
+			"title"         : "Collage title of the piece",
+			"description"   : "11×11″ | Pen on paper | 2011",
+			"image"         : "/assets/img/graphite-flowers.jpg"
+		}
+	]
+}
