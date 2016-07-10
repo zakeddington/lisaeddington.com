@@ -6,6 +6,7 @@
 .nav-filter {
 	@include clearfix();
 	padding: 20px 0;
+	width: 100%;
 
 	h2 {
 		border-bottom: 1px solid $grey;
@@ -16,27 +17,44 @@
 	}
 
 	ul {
-		display: block;
-		float: left;
+		display: flex;
+		flex-wrap: wrap;
 
 		li {
 			display: block;
-			float: left;
+			width: calc(100% / 7);
+
+			@include breakpoint(mobile) {
+				width: 33%;
+			}
 
 			a {
 				background: none;
-				border-bottom: 1px solid $grey;
+				border-bottom: 1px dashed $grey;
 				display: block;
-				padding: 5px 25px;
+				padding: 5px 0;
+				position: relative;
 				text-align: center;
 				transition: all $anim-speed ease-out;
 
+				&.active {
+					background: $red;
+					color: $white;
+				}
+
 				&:hover,
 				&:focus {
-					background: $green;
+					background: $blue;
 					color: $white;
 				}
 			}
+		}
+	}
+
+	&.nav-bottom {
+		ul li a {
+			border-bottom: none;
+			border-top: 1px dashed $grey;
 		}
 	}
 }
@@ -53,6 +71,11 @@
 	padding: 0;
 	position: relative;
 
+	.intro {
+		padding: 0 15px;
+	}
+
+
 	// Grid item container
 	.item-container {
 		align-items: center;
@@ -61,7 +84,6 @@
 		overflow: hidden;
 		position: relative;
 		padding-top: 33.333%;
-		// transition: all 1s ease-out;
 		width: 33.333%;
 
 		@include breakpoint(mobile) {
@@ -120,7 +142,7 @@
 			}
 
 			&:focus {
-				border: 1px solid $green;
+				border: 1px solid $blue;
 			}
 		}
 	}

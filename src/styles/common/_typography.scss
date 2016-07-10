@@ -8,15 +8,19 @@ body {
 	font-weight: 300;
 	line-height: 1.2;
 	font-family: $font-family-default;
+
+	@include breakpoint(mobile) {
+		font-size: 14px;
+	}
 }
 
 a {
-	color: $green;
+	color: $blue;
 	text-decoration: none;
 
 	&:focus,
 	&:hover {
-		color: $green-bright;
+		color: $red;
 		outline: none;
 	}
 }

@@ -28,7 +28,7 @@
 		"grunt-contrib-watch": "~1.0.0",
 		"grunt-include-replace": "~4.0.1",
 		"grunt-newer": "~1.1.2",
-
+		"grunt-webfont": "0.5.3",
 		"handlebars": "~4.0.5",
 		"browserify": "13.0.1",
 		"grunt-browserify": "5.0.0",

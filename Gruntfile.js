@@ -43,6 +43,7 @@ module.exports = function(grunt) {
 			sourceTemplates     : '<%= sourcePath %>/templates',
 			sourceVendor        : '<%= sourcePath %>/vendor',
 			sourceImages        : '<%= sourceAssets %>/images',
+			sourceWebfont       : '<%= sourcePath %>/webfont',
 			sourceFonts         : '<%= sourceAssets %>/fonts',
 
 			// local file paths
@@ -80,6 +81,7 @@ module.exports = function(grunt) {
 		var target = (target === 'dev') ? 'dev' : 'dist';
 		var tasks = [
 			'clean:' + target,
+			'webfont',
 			'includereplace:' + target,
 			//'imagemin:' + target,
 			'copy:' + target,
@@ -106,4 +108,8 @@ module.exports = function(grunt) {
 	 */
 	grunt.registerTask('run', ['build:dev', 'connect', 'watch']);
 
+	/**
+	 * Standalone task to build the icon font
+	 */
+	grunt.registerTask('webfonts', ['webfont']);
 };

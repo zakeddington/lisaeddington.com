@@ -72,8 +72,11 @@ class GridWall {
 			],
 			template        : tplGrid,              // Handlebars template for grid wall
 			errorMsg        : '<p>Oops. Something went wrong. Please refresh the browser to try again.</p>',
+			selectorIntro   : '.intro',             // selector for the category description
 			selectorItem    : '.item-container',    // selector for each grid item
 			selectorFilters : '.nav-filter a',      // selector for category filters
+			selectorBottom  : '.nav-bottom',        // selector for the filters at the bottom
+			classActive     : 'active',             // class for setting active states
 			classHidden     : 'hidden',             // class for setting hidden states
 			animSpeed       : 0.5,                  // (s) TweenMax animation speed
 			animEase        : 'Quad.easeOut',       // TweenMax animation ease
@@ -88,7 +91,8 @@ class GridWall {
 			window            : $(window),
 			body              : $('body'),
 			container         : null,
-			filters           : null
+			filters           : null,
+			bottom            : null
 		};
 
 		/**
@@ -121,6 +125,7 @@ class GridWall {
 	_initialize( containerSelector ) {
 		this.ui.container = $( containerSelector );
 		this.ui.filters   = $( this.options.selectorFilters );
+		this.ui.bottom    = $( this.options.selectorBottom );
 
 		// set global loader utility
 		this.instance.contentLoader = new Loader( this.ui.container );
@@ -219,45 +224,84 @@ class GridWall {
 	}
 
 	_setInitialResults() {
-		this._displayContent( this.instance.dataAll );
+		var curCategory = this.state.hash;
+
+		if ( curCategory ) {
+			curCategory = curCategory.substring(1);
+		} else {
+			curCategory = 'all';
+		}
+
+		this._setCurCategory( curCategory );
+	}
+
+	_setCurCategory( strCategory ) {
+		var self        = this,
+			curCategory = strCategory;
+
+		this.ui.filters.removeClass( this.options.classActive );
+
+		$.each( this.ui.filters, function() {
+			var $curFilter = $(this);
+
+			if ( $curFilter.attr('href') === '#' + curCategory ) {
+				$curFilter.addClass( self.options.classActive );
+			}
+		});
+
+		if ( curCategory === 'all' ) {
+			this._displayContent( this.instance.dataAll );
+		} else {
+			for ( let data of this.instance.dataCategories ) {
+				if ( data.category === curCategory ) {
+					this._displayContent( data );
+				}
+			}
+		}
 	}
 
 	/**
 	 * Display set of results
 	 */
 	_displayContent( dataObj ) {
-		var self          = this,
-			content       = dataObj,
-			completeCount = 0,
-			html, $html, $items;
-
-		if ( this.options.template ) {
-			html   = this.options.template( content );
-			$html  = $(html);
-			$items = $html.filter( this.options.selectorItem ).addClass( this.options.classHidden );
-		}
+		var self    = this,
+			content = dataObj,
+			html    = this.options.template( content ),
+			$html   = $(html),
+			$items  = $html.filter( this.options.selectorItem ).addClass( this.options.classHidden ),
+			$intro  = $html.filter( this.options.selectorIntro ).addClass( this.options.classHidden );
 
 		this.instance.contentLoader.removeLoader();
 
 		this.ui.container.prepend( $html ).imagesLoaded( { background: this.options.selectorItem }, function() {
+
+			TweenMax.fromTo( $intro, self.options.animSpeed, {
+				opacity    : 0,
+				y          : -30
+			}, {
+				opacity    : 1,
+				y          : 0,
+				ease       : self.options.animEase,
+				onComplete :function() {
+					$intro.removeAttr('style');
+				}
+			});
+
+			$intro.removeClass( self.options.classHidden );
+
 			$.each( $items, function( index ) {
 				var $curItem    = $(this),
 					$curTrigger = $curItem.find('a');
 
 				// Animate item into view
 				TweenMax.fromTo( $curItem, self.options.animSpeed, {
-					autoAlpha  : 0
+					opacity    : 0
 				}, {
-					autoAlpha  : 1,
+					opacity    : 1,
 					delay      : self.options.animDelay * index,
 					ease       : self.options.animEase,
 					onComplete :function() {
-						completeCount++;
-
-						// Initialize the random rotation of items after grid has rendered
-						if ( completeCount === $items.length ) {
-
-						}
+						$curItem.removeAttr('style');
 					}
 				});
 
@@ -281,19 +325,16 @@ class GridWall {
 
 		this._removeContent();
 
-		if ( curCategory === 'all' ) {
-			this._displayContent( this.instance.dataAll );
-		} else {
-			for ( let data of this.instance.dataCategories ) {
-				if ( data.category === curCategory ) {
-					this._displayContent( data );
-				}
-			}
-		}
+		this._setCurCategory( curCategory );
+	}
+
+	_onBottomClick() {
+		window.scrollTo(0,0);
 	}
 
 	_addEventListeners() {
 		this.ui.filters.on('click', $.proxy(this._onFilterClick, this));
+		this.ui.bottom.on('click', $.proxy(this._onBottomClick, this));
 	}
 }
 

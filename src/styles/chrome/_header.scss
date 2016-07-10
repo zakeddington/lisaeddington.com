@@ -4,24 +4,52 @@
 //
 
 header {
-	background: $black;
 	height: 60px;
 	position: relative;
 	text-align: center;
+
+	@include breakpoint(mobile) {
+		height: 80px;
+	}
 
 	.container {
 		position: relative;
 	}
 
 	h1 {
-		color: $white;
-		display: inline-block;
-		font-family: $font-family-light;
-		font-size: 36px;
-		font-weight: 300;
+		color: $blue;
+		display: block;
+		font-size: 60px;
+		font-weight: 900;
+		left: 50%;
 		letter-spacing: -1.5px;
 		line-height: 60px;
-		margin: 0 auto;
+		margin: 0;
+		mix-blend-mode: multiply;
+		position: absolute;
+		text-transform: uppercase;
+		top: 0;
+		transform: translateX(-50%);
+
+		@include breakpoint(tablet) {
+			font-size: 50px;
+		}
+
+		@include breakpoint(mobile) {
+			font-size: 30px;
+			line-height: 40px;
+			width: 100%;
+		}
+
+		span {
+			color: $red;
+			display: block;
+			left: 5px;
+			mix-blend-mode: multiply;
+			position: absolute;
+			top: 5px;
+			width: 100%;
+		}
 	}
 
 	ul {
@@ -29,12 +57,8 @@ header {
 		position: absolute;
 		top: 18px;
 
-		&.nav {
-			left: 15px;
-		}
-
-		&.social {
-			right: 15px;
+		@include breakpoint(mobile) {
+			top: 50px;
 		}
 
 		li {
@@ -43,7 +67,6 @@ header {
 			vertical-align: middle;
 
 			a {
-				color: $white;
 				display: block;
 				font-size: 14px;
 				font-weight: 400;
@@ -55,39 +78,14 @@ header {
 				width: 30px;
 
 				&:before {
-					background: center center no-repeat;
-					background-size: contain;
-					content: '';
-					display: inline-block;
-					height: 100%;
 					opacity: 0.7;
 					transition: all $anim-speed ease-out;
-					vertical-align: middle;
-					width: 100%;
 				}
 
 				&:hover,
 				&:focus {
 					&:before {
 						opacity: 1;
-					}
-				}
-
-				&.tumblr {
-					&:before {
-						background-image: url($image-path+'/logo-tumblr.png');
-					}
-				}
-
-				&.instagram {
-					&:before {
-						background-image: url($image-path+'/logo-instagram.png');
-					}
-				}
-
-				&.etsy {
-					&:before {
-						background-image: url($image-path+'/logo-etsy.png');
 					}
 				}
 
@@ -98,6 +96,33 @@ header {
 					&:before {
 						display: none;
 					}
+				}
+			}
+		}
+
+		&.nav {
+			left: 15px;
+
+			@include breakpoint(mobile) {
+				left: auto;
+				right: 50%;
+			}
+		}
+
+		&.social {
+			right: 15px;
+
+			@include breakpoint(mobile) {
+				left: 50%;
+				right: auto;
+			}
+
+			li a {
+				font-size: 24px;
+				width: 30px;
+
+				@include breakpoint(mobile) {
+					font-size: 20px;
 				}
 			}
 		}

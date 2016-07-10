@@ -20,6 +20,12 @@ module.exports = function (grunt) {
 					src: '**/*.*',
 					dest: '<%= localImages %>',
 					expand: true
+				},
+				{
+					cwd: '<%= sourceFonts %>',
+					src: '**/*.*',
+					dest: '<%= localFonts %>',
+					expand: true
 				}
 			]
 		},
@@ -30,6 +36,12 @@ module.exports = function (grunt) {
 					cwd: '<%= sourceData %>',
 					src: '**/*.*',
 					dest: '<%= publicData %>',
+					expand: true
+				},
+				{
+					cwd: '<%= sourceFonts %>',
+					src: '**/*.*',
+					dest: '<%= publicFonts %>',
 					expand: true
 				}
 			]

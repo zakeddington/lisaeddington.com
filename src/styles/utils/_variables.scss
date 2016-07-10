@@ -6,9 +6,8 @@
 // Colors
 $black                     : #000;
 $black-transparent         : rgba($black, 0.6);
-$blue                      : #1f8bb3;
-$green                     : #2ad2b0;
-$green-bright              : #07f1c1;
+$blue                      : #1BD3E3;
+$red                       : #F41D07;
 $grey                      : #ddd;
 $white                     : #fff;
 $white-transparent         : rgba($white, 0.6);
@@ -20,6 +19,7 @@ $image-path                : '../img';
 $font-path                 : '../fonts';
 
 // Fonts
+$font-family-icons         : 'icons';
 $font-family-default       : 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-family-light         : 'Quicksand', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-family-bold          : 'Calibre Bold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
