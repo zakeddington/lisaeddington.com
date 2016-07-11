@@ -21,6 +21,7 @@
 .loader-spinner {
 	animation: loading-anim 0.5s steps(6) infinite;
 	background: url($image-path+'/loading.png') center center no-repeat;
+	background-size: 100px 100px;
 	height: 100%;
 	left: 0;
 	position: absolute;
