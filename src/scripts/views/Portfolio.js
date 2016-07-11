@@ -1,8 +1,8 @@
 /**
- * Grid Wall
+ * Portfolio View
  *
  * @description
- * - Display wall of images, videos, tweets and POPstars
+ * - Display images in a grid with filtering by category
  * - Open detail view of each item in a modal
  *
  * @requires jQuery
@@ -10,12 +10,12 @@
  * @requires AppEvents
  *
  * @example
- * new GridWall($('.grid-wall'), {options})
+ * new Porfolio($('.portfolio'), {options})
  *
  * @constructor
- * @author     Zak Eddington <zak.eddington@wearepop.com>
+ * @author     Zak Eddington <zakeddington@gmail.com>
  *
- * @param {String} containerSelector  - container element (e.g. ".grid-wall")
+ * @param {String} containerSelector  - container element (e.g. ".portfolio)
  * @param {Object} objOptions         - Optional object of properties to mixin to the instance
  *
  */
@@ -27,7 +27,7 @@ import Loader     from 'utilities/Loader';
 import ModalMedia from 'widgets/ModalMedia';
 import tplGrid    from 'templates/grid.hbs';
 
-class GridWall {
+class Porfolio {
 
 	constructor( containerSelector, objOptions ) {
 		this.initialize( containerSelector, objOptions );
@@ -70,12 +70,12 @@ class GridWall {
 					apiUtil : AjaxGet
 				}
 			],
-			template        : tplGrid,              // Handlebars template for grid wall
+			template        : tplGrid,              // Handlebars template for grid layout
 			errorMsg        : '<p>Oops. Something went wrong. Please refresh the browser to try again.</p>',
 			selectorIntro   : '.intro',             // selector for the category description
 			selectorItem    : '.item-container',    // selector for each grid item
 			selectorFilters : '.nav-filter a',      // selector for category filters
-			selectorBottom  : '.nav-bottom',        // selector for the filters at the bottom
+			selectorBottom  : '.nav-bottom',        // selector for the filters at bottom of page
 			classActive     : 'active',             // class for setting active states
 			classHidden     : 'hidden',             // class for setting hidden states
 			animSpeed       : 0.5,                  // (s) TweenMax animation speed
@@ -87,25 +87,22 @@ class GridWall {
 		 * UI elements
 		 */
 		this.ui = {
-			document          : $(document),
-			window            : $(window),
-			body              : $('body'),
-			container         : null,
-			filters           : null,
-			bottom            : null
+			container         : null,  // container for portfolio
+			filters           : null,  // both sets of filters
+			bottom            : null   // filters at bottom of page
 		};
 
 		/**
 		 * Values specific to current grid wall
 		 */
 		this.instance = $.extend({
-			contentLoader  : null,                  // placeholder for global loading icon utility
+			contentLoader  : null,     // placeholder for global loading icon utility
 			dataAll        : {
 				"category" : "all",
 				"intro"    : "",
 				"items"    : []
 			},
-			dataCategories : []
+			dataCategories : []        // placeholder for JSON data
 		}, this.instance || {});
 
 		/**
@@ -146,8 +143,7 @@ class GridWall {
 
 	/**
 	 * Get all our data from API calls
-	 * Combine photos/videos into one array
-	 * Then randomize each array and display initial grid items
+	 * Then init the layout
 	 */
 	_getContent() {
 		var self          = this,
@@ -201,8 +197,7 @@ class GridWall {
 	}
 
 	/**
-	 * Randomize the combined data array
-	 * Then display the content
+	 * Randomize array utility
 	 */
 	_shuffleData( data ) {
 		var arrData    = data,
@@ -223,6 +218,9 @@ class GridWall {
 		}
 	}
 
+	/**
+	 * Set initial category to display based on hash or default to all
+	 */
 	_setInitialResults() {
 		var curCategory = this.state.hash;
 
@@ -235,6 +233,10 @@ class GridWall {
 		this._setCurCategory( curCategory );
 	}
 
+	/**
+	 * Set the active state of filters and display content
+	 * @param {String} strCategory - category name ('drawings', etc)
+	 */
 	_setCurCategory( strCategory ) {
 		var self        = this,
 			curCategory = strCategory;
@@ -262,6 +264,7 @@ class GridWall {
 
 	/**
 	 * Display set of results
+	 * @param {Object} dataObj - JSON data for category
 	 */
 	_displayContent( dataObj ) {
 		var self    = this,
@@ -275,6 +278,7 @@ class GridWall {
 
 		this.ui.container.prepend( $html ).imagesLoaded( { background: this.options.selectorItem }, function() {
 
+			// Fade in, slide down the intro
 			TweenMax.fromTo( $intro, self.options.animSpeed, {
 				opacity    : 0,
 				y          : -30
@@ -289,6 +293,7 @@ class GridWall {
 
 			$intro.removeClass( self.options.classHidden );
 
+			// Fade in each item
 			$.each( $items, function( index ) {
 				var $curItem    = $(this),
 					$curTrigger = $curItem.find('a');
@@ -314,6 +319,7 @@ class GridWall {
 		this.ui.container.empty();
 	}
 
+	// Update hash and display new content
 	_onFilterClick( event ) {
 		event.preventDefault();
 
@@ -321,11 +327,13 @@ class GridWall {
 			curHash     = $curFilter.attr('href'),
 			curCategory = curHash.substring(1);
 
-		window.location.hash = curCategory;
+		if ( !$curFilter.hasClass( this.options.classActive ) ) {
+			window.location.hash = curCategory;
 
-		this._removeContent();
+			this._removeContent();
 
-		this._setCurCategory( curCategory );
+			this._setCurCategory( curCategory );
+		}
 	}
 
 	_onBottomClick() {
@@ -338,4 +346,4 @@ class GridWall {
 	}
 }
 
-export default GridWall;
+export default Porfolio;

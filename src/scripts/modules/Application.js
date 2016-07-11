@@ -1,13 +1,13 @@
 /**
  * @module       Application
  * @description  Defines our application
- * @author       Zak Eddington <zak.eddington@wearepop.com>
+ * @author       Zak Eddington <zakeddington@gmail.com>
  */
 
 import AppConfig             from 'config/AppConfig';
 import AppEvents             from 'config/AppEvents';
 import breakpointChange      from 'utilities/BreakpointChange';
-import GridWall              from 'widgets/GridWall';
+import Portfolio             from 'views/Portfolio';
 
 const Application = {
 
@@ -19,7 +19,7 @@ const Application = {
 		// Initialize custom events
 		breakpointChange();
 
-		new GridWall( '.grid-wall', {
+		new Portfolio( '.portfolio', {
 			// options
 		});
 	}

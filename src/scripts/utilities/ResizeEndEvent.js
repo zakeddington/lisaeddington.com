@@ -3,7 +3,7 @@
  * @description  Create pseudo 'resizeEnd' event
  * 
  * @global
- * @author       Zak Eddington <zak.eddington@wearepop.com>
+ * @author       Zak Eddington <zakeddington@gmail.com>
  */
  
 import AppEvents from 'config/AppEvents';

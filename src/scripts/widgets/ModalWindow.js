@@ -12,7 +12,7 @@
  * new ModalWindow($('.modal-trigger'), {options})
  *
  * @constructor
- * @author     Zak Eddington <zak.eddington@wearepop.com>
+ * @author     Zak Eddington <zakeddington@gmail.com>
  *
  * @param {String} triggerSelector  - trigger element (e.g. ".modal-trigger")
  * @param {Object} objOptions       - Optional object of properties to mixin to the instance

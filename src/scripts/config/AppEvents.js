@@ -3,7 +3,7 @@
  * @description  Defines events for application
  * 
  * @global
- * @author       Zak Eddington <zak.eddington@wearepop.com>
+ * @author       Zak Eddington <zakeddington@gmail.com>
  */
 const AppEvents = {
 

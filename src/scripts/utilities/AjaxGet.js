@@ -7,7 +7,7 @@
  * @return: json, html, text
  * 
  * @global
- * @author       Zak Eddington <zak.eddington@wearepop.com>
+ * @author       Zak Eddington <zakeddington@gmail.com>
  */
 
 const AjaxGet = function(url, dataType, crossDomain) {

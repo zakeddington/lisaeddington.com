@@ -3,7 +3,7 @@
  * @description  Create pseudo 'breakpointChange' event
  * 
  * @global
- * @author       Zak Eddington <zak.eddington@wearepop.com>
+ * @author       Zak Eddington <zakeddington@gmail.com>
  */
  
 import AppConfig from 'config/AppConfig';

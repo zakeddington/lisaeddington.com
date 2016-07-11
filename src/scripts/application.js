@@ -1,7 +1,7 @@
 /**
  * @module       Application Initializer
  * @description  Defines load sequence for main module
- * @author       Zak Eddington <zak.eddington@wearepop.com>
+ * @author       Zak Eddington <zakeddington@gmail.com>
  */
 
 import AppController     from 'modules/Application.js';

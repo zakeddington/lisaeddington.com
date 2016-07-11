@@ -3,7 +3,7 @@
  * @description  Global loading icon
  * 
  * @global
- * @author       Zak Eddington <zak.eddington@wearepop.com>
+ * @author       Zak Eddington <zakeddington@gmail.com>
  */
 
 class Loader {
