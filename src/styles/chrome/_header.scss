@@ -30,9 +30,10 @@ header {
 		text-transform: uppercase;
 		top: 0;
 		transform: translateX(-50%);
+		white-space: nowrap;
 
 		@include breakpoint(tablet) {
-			font-size: 50px;
+			font-size: 45px;
 		}
 
 		@include breakpoint(mobile) {
@@ -49,6 +50,11 @@ header {
 			position: absolute;
 			top: 5px;
 			width: 100%;
+
+			@include breakpoint(tablet, mobile) {
+				left: 3px;
+				top: 3px;
+			}
 		}
 	}
 
@@ -120,6 +126,11 @@ header {
 			li a {
 				font-size: 24px;
 				width: 30px;
+
+				@include breakpoint(tablet) {
+					font-size: 22px;
+					width: 26px;
+				}
 
 				@include breakpoint(mobile) {
 					font-size: 20px;

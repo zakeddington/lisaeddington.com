@@ -26,7 +26,23 @@ a {
 }
 
 strong {
-	font-family: $font-family-bold;
+	font-weight: 700;
+}
+
+h2 {
+	color: $white;
+	font-size: 40px;
+	font-weight: 900;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+
+	// @include breakpoint(tablet) {
+	// 	font-size: 18px;
+	// }
+
+	@include breakpoint(mobile) {
+		font-size: 24px;
+	}
 }
 
 h3 {
