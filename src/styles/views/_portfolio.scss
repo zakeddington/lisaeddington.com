@@ -75,7 +75,6 @@
 		padding: 0 15px;
 	}
 
-
 	// Grid item container
 	.item-container {
 		align-items: center;
@@ -142,7 +141,7 @@
 			}
 
 			&:focus {
-				border: 1px solid $blue;
+				border: 1px dashed $grey;
 			}
 		}
 	}
