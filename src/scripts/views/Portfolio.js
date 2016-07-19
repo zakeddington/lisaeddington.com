@@ -97,11 +97,6 @@ class Porfolio {
 		 */
 		this.instance = $.extend({
 			contentLoader  : null,     // placeholder for global loading icon utility
-			dataAll        : {
-				"category" : "all",
-				"intro"    : "",
-				"items"    : []
-			},
 			dataCategories : []        // placeholder for JSON data
 		}, this.instance || {});
 
@@ -136,7 +131,7 @@ class Porfolio {
 	 * Create our modal widgets for each type of content
 	 */
 	_initModals() {
-		var modal = new ModalMedia( '.modal-photo-trigger', {
+		let modal = new ModalMedia( '.modal-photo-trigger', {
 				// options
 			});
 	}
@@ -146,7 +141,7 @@ class Porfolio {
 	 * Then init the layout
 	 */
 	_getContent() {
-		var self          = this,
+		let self          = this,
 			arrayPromises = [];
 
 		for ( let dataAPI of this.options.dataAPIs ) {
@@ -157,11 +152,9 @@ class Porfolio {
 
 		this._deferPromises( arrayPromises ).then( function( results ) {
 			for ( let result of results ) {
-				self.instance.dataAll.items  = self.instance.dataAll.items.concat( result.items );
 				self.instance.dataCategories.push( result );
 			}
 
-			self._shuffleData( self.instance.dataAll.items );
 			self._setInitialResults();
 		});
 	}
@@ -173,7 +166,7 @@ class Porfolio {
 	 * @return {Object} promise of all the data returned
 	 */
 	_deferPromises( arrPromises ) {
-		var deferred  = $.Deferred(),
+		let deferred  = $.Deferred(),
 			results   = [],
 			remaining = arrPromises.length;
 
@@ -197,40 +190,27 @@ class Porfolio {
 	}
 
 	/**
-	 * Randomize array utility
-	 */
-	_shuffleData( data ) {
-		var arrData    = data,
-			curIndex   = arrData.length,
-			tempValue,
-			ranIndex;
-
-		// While there remain elements to shuffle...
-		while ( 0 !== curIndex ) {
-			// Pick a remaining element...
-			ranIndex  = Math.floor( Math.random() * curIndex );
-			curIndex -= 1;
-
-			// And swap it with the current element.
-			tempValue         = arrData[curIndex];
-			arrData[curIndex] = arrData[ranIndex];
-			arrData[ranIndex] = tempValue;
-		}
-	}
-
-	/**
 	 * Set initial category to display based on hash or default to all
 	 */
 	_setInitialResults() {
-		var curCategory = this.state.hash;
+		let curCategory = this.state.hash;
 
 		if ( curCategory ) {
 			curCategory = curCategory.substring(1);
 		} else {
-			curCategory = 'all';
+			curCategory = this._getRandomCategory();
 		}
 
 		this._setCurCategory( curCategory );
+	}
+
+	/**
+	 * Randomly select a category
+	 */
+	_getRandomCategory() {
+		let ranIndex = Math.floor( Math.random() * this.instance.dataCategories.length );
+
+		return this.instance.dataCategories[ranIndex].category;
 	}
 
 	/**
@@ -238,26 +218,22 @@ class Porfolio {
 	 * @param {String} strCategory - category name ('drawings', etc)
 	 */
 	_setCurCategory( strCategory ) {
-		var self        = this,
+		let self        = this,
 			curCategory = strCategory;
 
 		this.ui.filters.removeClass( this.options.classActive );
 
 		$.each( this.ui.filters, function() {
-			var $curFilter = $(this);
+			let $curFilter = $(this);
 
 			if ( $curFilter.attr('href') === '#' + curCategory ) {
 				$curFilter.addClass( self.options.classActive );
 			}
 		});
 
-		if ( curCategory === 'all' ) {
-			this._displayContent( this.instance.dataAll );
-		} else {
-			for ( let data of this.instance.dataCategories ) {
-				if ( data.category === curCategory ) {
-					this._displayContent( data );
-				}
+		for ( let data of this.instance.dataCategories ) {
+			if ( data.category === curCategory ) {
+				this._displayContent( data );
 			}
 		}
 	}
@@ -267,7 +243,7 @@ class Porfolio {
 	 * @param {Object} dataObj - JSON data for category
 	 */
 	_displayContent( dataObj ) {
-		var self    = this,
+		let self    = this,
 			content = dataObj,
 			html    = this.options.template( content ),
 			$html   = $(html),
@@ -295,7 +271,7 @@ class Porfolio {
 
 			// Fade in each item
 			$.each( $items, function( index ) {
-				var $curItem    = $(this),
+				let $curItem    = $(this),
 					$curTrigger = $curItem.find('a');
 
 				// Animate item into view
@@ -323,7 +299,7 @@ class Porfolio {
 	_onFilterClick( event ) {
 		event.preventDefault();
 
-		var $curFilter  = $( event.currentTarget ),
+		let $curFilter  = $( event.currentTarget ),
 			curHash     = $curFilter.attr('href'),
 			curCategory = curHash.substring(1);
 
