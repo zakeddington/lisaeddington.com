@@ -1,0 +1,76 @@
+/*
+Theme Name: Lisa Eddington
+Theme URI: http://wordpress.org/
+Description: A clean portfolio theme to showcase her art.
+Author: Zak Eddington
+Author uri: http://www.zakeddington.com/
+Version: 0.1
+Tags: basic, theme builder, simple, lightweight
+*/
+
+/* import default stylesheet from more tidy css directory */
+@import url('_ui/css/style.css');
+
+
+/* -------------------------------------------------------------- 
+   
+   Default styles for Images - credit to Ian Stewart, author of Thematic
+   
+   I've duplicated these styles here from images.css in
+   order to get Thematic through the auto-checker at the
+   official WordPress Themes directory.
+   
+   When the directory can hunt though css files linked
+   through @import the styles below will no longer be
+   neccesary and will be removed.
+   
+   Cheers. --Ian Stewart
+  
+-------------------------------------------------------------- */   
+.entry,
+.entry-content,
+.wp-caption {
+	max-width: 100% !important;
+}
+.entry-content img {
+    height: auto;
+    margin: 0 0 20px 0;
+    max-width:100%;
+}
+.alignleft,
+img.alignleft {
+	float: left;
+    margin-right:20px;
+}
+.alignright,
+img.alignright {
+	display: block;
+	float: right;
+    margin-left:20px;
+}
+.aligncenter,
+img.aligncenter {
+	margin-left:auto;
+	margin-right:auto;
+	display: block;
+	clear: both;
+}
+.wp-caption {
+	margin: 0
+}
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+.wp-caption p.wp-caption-text {/*
+	margin: 0;
+	padding:5px;*/
+}
+.gallery img {
+    margin:0;
+}
+.wp-smiley { /* Prevent the smileys from breaking line-height */
+	max-height:12px;
+	margin:0 !important;
+}
