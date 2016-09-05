@@ -1,6 +1,6 @@
-# Photo Grid
+# LisaEddington.com
 
-Photo grid wall with random rotating images, tweets, and popstars.
+Portfolio site for my beautiful wife and her beautiful artwork.
 
 ## Base Dependencies
 - node/npm (http://nodejs.org/)
