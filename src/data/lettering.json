@@ -3,74 +3,114 @@
 	"intro"    : "Lettering lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis ac odio quis sollicitudin. Vivamus dolor nisi, blandit a pellentesque eu, rutrum ac neque. Cras ultrices id sapien sed molestie. Proin ultricies augue eget porta aliquam. Suspendisse molestie nulla sit amet libero aliquam bibendum. Nam tincidunt mollis velit, in viverra neque vulputate quis. Aliquam tincidunt est non auctor tincidunt. Etiam cursus ornare aliquam.",
 	"items"    : [
 		{
-			"title"         : "Lettering title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/lettering/36-eyes.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/room-without-a-window.jpg"
 		},
 		{
-			"title"         : "Lettering title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/lettering/bees.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/warning.jpg"
 		},
 		{
-			"title"         : "Lettering title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/lettering/Blue.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/burnout.jpg"
 		},
 		{
-			"title"         : "Lettering title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/lettering/buffalo.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/another-girl-another-planet.jpg"
 		},
 		{
-			"title"         : "Lettering title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/lettering/carnival.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/today-your-love.jpg"
 		},
 		{
-			"title"         : "Lettering title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/lettering/cedar.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/to-have-and-have-not.jpg"
 		},
 		{
-			"title"         : "Lettering title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/lettering/chinese-rock.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/here-we-are-nowhere.jpg"
 		},
 		{
-			"title"         : "Lettering title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/lettering/come-back.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/kyoto-now.jpg"
 		},
 		{
-			"title"         : "Lettering title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/lettering/deer.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/its-not-about-you.jpg"
 		},
 		{
-			"title"         : "Lettering title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/lettering/fiery.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/got-a-lot-to-say.jpg"
 		},
 		{
-			"title"         : "Lettering title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/lettering/fish.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/vulnerability.psd"
 		},
 		{
-			"title"         : "Lettering title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/lettering/flower.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/sassafras-roots.jpg"
 		},
 		{
-			"title"         : "Lettering title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/lettering/fox.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/the-way-i-walk.jpg"
 		},
 		{
-			"title"         : "Lettering title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/lettering/graphite-flowers.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/emotions.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/its-quite-alright.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/cashing-in.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/walk-away.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/knowledge.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/all-outa-angst.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/rise-above.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/distractions.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/lettering/annoying.jpg"
 		}
 	]
 }

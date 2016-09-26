@@ -82,8 +82,8 @@
 		height: 0;
 		overflow: hidden;
 		position: relative;
-		padding-top: 33.333%;
-		width: 33.333%;
+		padding-top: 25%;
+		width: 25%;
 
 		@include breakpoint(mobile) {
 			padding-top: 50%;
@@ -101,7 +101,7 @@
 		}
 
 		.modal-photo-trigger {
-			background: left center no-repeat;
+			background: center center no-repeat;
 			background-size: contain;
 			border-radius: 50%;
 			display: block;

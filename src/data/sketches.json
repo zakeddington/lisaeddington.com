@@ -3,74 +3,269 @@
 	"intro"    : "Sketches lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis ac odio quis sollicitudin. Vivamus dolor nisi, blandit a pellentesque eu, rutrum ac neque. Cras ultrices id sapien sed molestie. Proin ultricies augue eget porta aliquam. Suspendisse molestie nulla sit amet libero aliquam bibendum. Nam tincidunt mollis velit, in viverra neque vulputate quis. Aliquam tincidunt est non auctor tincidunt. Etiam cursus ornare aliquam.",
 	"items"    : [
 		{
-			"title"         : "Sketch title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/sketches/36-eyes.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug53web.jpg"
 		},
 		{
-			"title"         : "Sketch title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/sketches/bees.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug52web.jpg"
 		},
 		{
-			"title"         : "Sketch title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/sketches/Blue.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug51web.jpg"
 		},
 		{
-			"title"         : "Sketch title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/sketches/buffalo.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug50web.jpg"
 		},
 		{
-			"title"         : "Sketch title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/sketches/carnival.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug49web.jpg"
 		},
 		{
-			"title"         : "Sketch title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/sketches/cedar.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug48web.jpg"
 		},
 		{
-			"title"         : "Sketch title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/sketches/chinese-rock.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug47web.jpg"
 		},
 		{
-			"title"         : "Sketch title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/sketches/come-back.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug46web.jpg"
 		},
 		{
-			"title"         : "Sketch title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/sketches/deer.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug45web.jpg"
 		},
 		{
-			"title"         : "Sketch title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/sketches/fiery.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug44web.jpg"
 		},
 		{
-			"title"         : "Sketch title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/sketches/fish.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug43web.jpg"
 		},
 		{
-			"title"         : "Sketch title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/sketches/flower.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug42web.jpg"
 		},
 		{
-			"title"         : "Sketch title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/sketches/fox.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug41web.jpg"
 		},
 		{
-			"title"         : "Sketch title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/sketches/graphite-flowers.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug40web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug39web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug38web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug37web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug36web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug35web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug34web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug33web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug32web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug31web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug30web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug29web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug28web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug27web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug26web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug25web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug24web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug23web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug22web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug21web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug20web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug19web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug18web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug17web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug16web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug15web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug14web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug13web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug12web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug11web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug10web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug9web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug8web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug7web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug6web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug5web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug4web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug3web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug2web.jpg"
+		},
+		{
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/sketches/mug1web.jpg"
 		}
 	]
 }

@@ -3,74 +3,44 @@
 	"intro"    : "Nature lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis ac odio quis sollicitudin. Vivamus dolor nisi, blandit a pellentesque eu, rutrum ac neque. Cras ultrices id sapien sed molestie. Proin ultricies augue eget porta aliquam. Suspendisse molestie nulla sit amet libero aliquam bibendum. Nam tincidunt mollis velit, in viverra neque vulputate quis. Aliquam tincidunt est non auctor tincidunt. Etiam cursus ornare aliquam.",
 	"items"    : [
 		{
-			"title"         : "Nature title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/nature/36-eyes.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/nature/love.jpg"
 		},
 		{
-			"title"         : "Nature title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/nature/bees.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/nature/yas.jpg"
 		},
 		{
-			"title"         : "Nature title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/nature/Blue.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/nature/meh.jpg"
 		},
 		{
-			"title"         : "Nature title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/nature/buffalo.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/nature/ugh.jpg"
 		},
 		{
-			"title"         : "Nature title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/nature/carnival.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/nature/dandelion-mandala.jpg"
 		},
 		{
-			"title"         : "Nature title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/nature/cedar.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/nature/pinecone-mandala.jpg"
 		},
 		{
-			"title"         : "Nature title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/nature/chinese-rock.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/nature/maple-leaf-mandala.jpg"
 		},
 		{
-			"title"         : "Nature title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/nature/come-back.jpg"
-		},
-		{
-			"title"         : "Nature title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/nature/deer.jpg"
-		},
-		{
-			"title"         : "Nature title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/nature/fiery.jpg"
-		},
-		{
-			"title"         : "Nature title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/nature/fish.jpg"
-		},
-		{
-			"title"         : "Nature title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/nature/flower.jpg"
-		},
-		{
-			"title"         : "Nature title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/nature/fox.jpg"
-		},
-		{
-			"title"         : "Nature title of the piece",
-			"description"   : "11×11″ | Pen on paper | 2011",
-			"image"         : "/assets/img/nature/graphite-flowers.jpg"
+			"title"         : "",
+			"description"   : "",
+			"image"         : "/assets/img/nature/cedar-mandala.jpg"
 		}
 	]
 }
