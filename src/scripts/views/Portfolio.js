@@ -6,22 +6,18 @@
  * - Open detail view of each item in a modal
  *
  * @requires jQuery
- * @requires AppConfig
- * @requires AppEvents
  *
  * @example
- * new Porfolio($('.portfolio'), {options})
+ * new Porfolio('.portfolio', {options})
  *
  * @constructor
  * @author     Zak Eddington <zakeddington@gmail.com>
  *
- * @param {String} containerSelector  - container element (e.g. ".portfolio)
+ * @param {String} containerSelector  - container element (e.g. '.portfolio')
  * @param {Object} objOptions         - Optional object of properties to mixin to the instance
  *
  */
 
-import AppConfig  from 'config/AppConfig';
-import AppEvents  from 'config/AppEvents';
 import AjaxGet    from 'utilities/AjaxGet';
 import Loader     from 'utilities/Loader';
 import ModalMedia from 'widgets/ModalMedia';

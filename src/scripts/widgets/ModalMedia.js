@@ -1,25 +1,25 @@
 /**
- * Photo/Video Modal Window
+ * Photo Modal Window
  *
  * @description
- * - Display Photo/Video in a modal window
- * - Photo/Video is referenced via data attr on trigger
+ * - Display photo in a modal window
+ * - Photo is cloned content from within the trigger element
  *
+ * @requires jQuery
  * @requires ModalWindow (base class)
- * @requires jQuery imagesLoaded plugin
  *
  * @example
- * new ModalWindow($('.modal-photo-trigger'), {options})
+ * new ModalWindow('.modal-photo-trigger', {options})
  *
  * @constructor
  * @author     Zak Eddington <zakeddington@gmail.com>
  *
- * @param {String} triggerSelector  - trigger element (e.g. ".modal-photo-trigger")
+ * @param {String} triggerSelector  - trigger element (e.g. '.modal-photo-trigger')
  * @param {Object} objOptions       - Optional object of properties to mixin to the instance
  *
  */
 
-import ModalWindow   from 'widgets/ModalWindow';
+import ModalWindow from 'widgets/ModalWindow';
 
 class ModalMedia extends ModalWindow {
 

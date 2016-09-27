@@ -5,23 +5,19 @@
  * - Display content (href target) in a modal window
  *
  * @requires jQuery
- * @requires AppConfig
- * @requires AppEvents
  *
  * @example
- * new ModalWindow($('.modal-trigger'), {options})
+ * new ModalWindow('.modal-trigger', {options})
  *
  * @constructor
  * @author     Zak Eddington <zakeddington@gmail.com>
  *
- * @param {String} triggerSelector  - trigger element (e.g. ".modal-trigger")
+ * @param {String} triggerSelector  - trigger element (e.g. '.modal-trigger')
  * @param {Object} objOptions       - Optional object of properties to mixin to the instance
  *
  */
 
-import AppConfig from 'config/AppConfig';
-import AppEvents from 'config/AppEvents';
-import Loader    from 'utilities/Loader';
+import Loader from 'utilities/Loader';
 
 class ModalWindow {
 
@@ -43,7 +39,7 @@ class ModalWindow {
 			closeBtnClass     : 'modal-close',               // class of the close button
 			closeBtnText      : 'close modal window',        // inner text and title attribute of the close button
 			activeClass       : 'active',                    // class for setting active states
-			customEventPrfx   : AppEvents.MODAL_EVENT        // name for modal events
+			// customEventPrfx   : AppEvents.MODAL_EVENT        // name for modal events
 		}, objOptions || {});
 
 		/**
@@ -155,7 +151,7 @@ class ModalWindow {
 	 */
 	_openModal() {
 		// Fire custom event
-		$.event.trigger( this.options.customEventPrfx + ':preOpenModal' );
+		// $.event.trigger( this.options.customEventPrfx + ':preOpenModal' );
 
 		this.state.winScrollTop = this.ui.window.scrollTop();
 
@@ -184,7 +180,7 @@ class ModalWindow {
 		this.ui.closeButton.focus();
 
 		// Fire custom event
-		$.event.trigger( this.options.customEventPrfx + ':modalOpened' );
+		// $.event.trigger( this.options.customEventPrfx + ':modalOpened' );
 	}
 
 	/**
@@ -214,7 +210,7 @@ class ModalWindow {
 
 		self.ui.modal.empty();
 
-		$.event.trigger( this.options.customEventPrfx + ':ModalClosed' );
+		// $.event.trigger( this.options.customEventPrfx + ':ModalClosed' );
 	}
 
 	/**

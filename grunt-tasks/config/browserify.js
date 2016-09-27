@@ -3,14 +3,13 @@
  * browserify
  * Grunt task for node-browserify.
  */
- 
+
 var path = require('path');
 var pathmodify = require('pathmodify');
 
 module.exports = function (grunt) {
 
 	var paths = [
-		pathmodify.mod.dir('config', path.join(__dirname, '../../src/scripts/config')),
 		pathmodify.mod.dir('modules', path.join(__dirname, '../../src/scripts/modules')),
 		pathmodify.mod.dir('utilities', path.join(__dirname, '../../src/scripts/utilities')),
 		pathmodify.mod.dir('views', path.join(__dirname, '../../src/scripts/views')),

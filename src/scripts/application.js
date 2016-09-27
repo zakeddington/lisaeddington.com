@@ -5,7 +5,7 @@
  */
 
 import AppController     from 'modules/Application.js';
-import HandlebarsHelpers from 'config/HandlebarsHelpers.js';
+import HandlebarsHelpers from 'utilities/HandlebarsHelpers.js';
 
 $(function() {
 	new HandlebarsHelpers();
