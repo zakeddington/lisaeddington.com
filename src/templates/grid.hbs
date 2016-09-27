@@ -1,20 +1,32 @@
 
 {{#if intro}}
-<p class="intro">{{{intro}}}</p>
+	<p class="intro">{{{intro}}}</p>
 {{/if}}
 
+<div class="portfolio-items">
 {{#each items}}
 
 	<div class="item-container">
 		<div class="item">
 			<a href="#" class="modal-photo-trigger">
 				<div class="item-image" style="background-image: url({{image}});" />
-				<div class="item-info">
-					<h3>{{{title}}}</h3>
-					<p>{{{description}}}</p>
+
+				{{#ifAnd title description}}
+					<div class="item-info">
+				{{else}}
+					<div class="item-info no-info">
+				{{/ifAnd}}
+
+					{{#if title }}
+						<h3>{{{title}}}</h3>
+					{{/if}}
+					{{#if description }}
+						<p>{{{description}}}</p>
+					{{/if}}
 				</div>
 			</a>
 		</div>
 	</div>
 
 {{/each}}
+</div>

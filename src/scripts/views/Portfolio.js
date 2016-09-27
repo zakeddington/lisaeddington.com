@@ -247,7 +247,7 @@ class Porfolio {
 			content = dataObj,
 			html    = this.options.template( content ),
 			$html   = $(html),
-			$items  = $html.filter( this.options.selectorItem ).addClass( this.options.classHidden ),
+			$items  = $html.find( this.options.selectorItem ).addClass( this.options.classHidden ),
 			$intro  = $html.filter( this.options.selectorIntro ).addClass( this.options.classHidden );
 
 		this.instance.contentLoader.removeLoader();

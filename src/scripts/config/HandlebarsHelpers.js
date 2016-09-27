@@ -4,6 +4,13 @@ var Handlebars = require('handlebars/runtime')['default'];
 const HandlebarsHelpers = function() {
 /* jshint ignore:start */
 
+	Handlebars.registerHelper('ifAnd', function(v1, v2, options) {
+		if (v1 && v2) {
+			return options.fn(this);
+		}
+		return options.inverse(this);
+	});
+
 	Handlebars.registerHelper('compare', function (lvalue, operator, rvalue, options) {
 
 		var operators, result;
@@ -35,7 +42,7 @@ const HandlebarsHelpers = function() {
 		}
 
 		result = operators[operator](lvalue, rvalue);
-		
+
 		if (result) {
 			return options.fn(this);
 		} else {
@@ -122,7 +129,7 @@ const HandlebarsHelpers = function() {
 	Handlebars.registerHelper('toLowerCase', function(value) {
 		return (value && typeof value === 'string') ? value.toLowerCase() : '';
 	});
-	
+
 	Handlebars.registerHelper('if_eq', function(a, b, opts) {
 		if(a == b)
 			return opts.fn(this);

@@ -64,14 +64,22 @@
 //
 
 .portfolio {
-	display: flex;
-	flex-wrap: wrap;
 	margin: 0 auto;
+	min-height: 90vh;
 	padding: 0;
-	position: relative;
 
 	.intro {
 		padding: 0 15px;
+
+		@include breakpoint(desktop) {
+			padding: 0 15%;
+		}
+	}
+
+	.portfolio-items {
+		display: flex;
+		flex-wrap: wrap;
+		position: relative;
 	}
 
 	// Grid item container
@@ -121,7 +129,7 @@
 			}
 
 			.item-info {
-				background: rgba($blue, 0.6);
+				background: rgba($blue, 0.8);
 				border-radius: 50%;
 				display: flex;
 				height: 100%;

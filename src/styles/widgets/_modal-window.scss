@@ -128,19 +128,23 @@
 			display: block;
 			height: 90%;
 			position: absolute;
-			top: 0;
+			top: 5%;
 			width: 100%;
 		}
 
 		.item-info {
-			background: rgba($white, 0.9);
+			background: rgba($white, 0.8);
 			bottom: 0;
 			display: block;
-			height: 10%;
+			height: 15%;
 			padding: 10px;
 			position: absolute;
 			text-align: center;
 			width: 100%;
+
+			&.no-info {
+				display: none;
+			}
 
 			p {
 				margin: 0;
