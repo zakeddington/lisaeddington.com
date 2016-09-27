@@ -44,25 +44,18 @@ class ModalMedia extends ModalWindow {
 	 */
 	_setContent() {
 		var self          = this,
-			$cloneContent = this.ui.curTrigger.children().clone(),
-			bgImage       = this.ui.curTrigger.css('background-image');
+			$cloneContent = this.ui.curTrigger.children().clone();
 
 		// Create modal content container
 		this.ui.content = $('<div/>', {
 			'class': this.options.contentClass
 		}).appendTo( this.ui.modal );
 
-
-		this.ui.image = $('<div/>', {
-			'class' : 'item-image',
-			'title' : 'click to close'
-		}).css('background-image', bgImage).appendTo( this.ui.content );
-
 		this.ui.content.append( $cloneContent );
 
 		this.ui.content.appendTo( this.ui.modal );
 
-		this.ui.image.on('click.' + this.instance.namespace, function() {
+		this.ui.content.on('click.' + this.instance.namespace, function() {
 			if ( self.state.isOpen ) {
 				self._closeModal();
 			}
