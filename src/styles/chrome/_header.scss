@@ -135,6 +135,10 @@ header {
 				@include breakpoint(mobile) {
 					font-size: 20px;
 				}
+
+				span {
+					@include offscreen();
+				}
 			}
 		}
 	}

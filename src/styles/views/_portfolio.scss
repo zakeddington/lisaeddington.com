@@ -140,6 +140,10 @@
 				transition: all $anim-speed ease-out;
 				width: 100%;
 
+				&.no-info {
+					background: rgba($blue, 0.5);
+				}
+
 				h3 {
 					color: $black;
 					align-items: center;
