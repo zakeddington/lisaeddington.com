@@ -11,6 +11,12 @@
 	display: inline-block;
 	fill: $blue;
 	height: 1em;
+	transition: all $anim-speed ease-out;
 	vertical-align: middle;
 	width: 1em;
+}
+
+a:hover .icon,
+a:focus .icon {
+	fill: $red;
 }

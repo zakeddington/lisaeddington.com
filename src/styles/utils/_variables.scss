@@ -16,33 +16,10 @@ $text-default              : $black;
 
 // Paths
 $image-path                : '../img';
-$font-path                 : '../fonts';
 
 // Fonts
-$font-family-icons         : 'icons';
 $font-family-default       : 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-family-light         : 'Quicksand', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-family-dots          : 'Codystar', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-
-.roboto {
-	font-family: 'Roboto', sans-serif;
-}
-.ubuntu {
-	font-family: 'Ubuntu', sans-serif;
-}
-.quicksand {
-	font-family: 'Quicksand', sans-serif;
-}
-.pompiere {
-	font-family: 'Pompiere', cursive;
-}
-.muli {
-	font-family: 'Muli', sans-serif;
-}
-.codystar {
-	font-family: 'Codystar', sans-serif;
-}
 
 // Animation
 $anim-speed                : 0.3s;

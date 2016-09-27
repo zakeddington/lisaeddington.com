@@ -43,14 +43,11 @@ module.exports = function(grunt) {
 			sourceTemplates     : '<%= sourcePath %>/templates',
 			sourceVendor        : '<%= sourcePath %>/vendor',
 			sourceImages        : '<%= sourceAssets %>/images',
-			sourceWebfont       : '<%= sourcePath %>/webfont',
-			sourceFonts         : '<%= sourceAssets %>/fonts',
 
 			// local file paths
 			localPath           : './_builds/local',
 			localAssets         : '<%= localPath %>/assets',
 			localData           : '<%= localAssets %>/data',
-			localFonts          : '<%= localAssets %>/fonts',
 			localImages         : '<%= localAssets %>/img',
 			localScripts        : '<%= localAssets %>/js',
 			localStyles         : '<%= localAssets %>/css',
@@ -60,7 +57,6 @@ module.exports = function(grunt) {
 			publicPath          : './_builds/public',
 			publicAssets        : '<%= publicPath %>/assets',
 			publicData          : '<%= publicAssets %>/data',
-			publicFonts         : '<%= publicAssets %>/fonts',
 			publicImages        : '<%= publicAssets %>/img',
 			publicScripts       : '<%= publicAssets %>/js',
 			publicStyles        : '<%= publicAssets %>/css',
@@ -81,7 +77,6 @@ module.exports = function(grunt) {
 		var target = (target === 'dev') ? 'dev' : 'dist';
 		var tasks = [
 			'clean:' + target,
-			'webfont',
 			'includereplace:' + target,
 			//'imagemin:' + target,
 			'copy:' + target,
@@ -107,9 +102,4 @@ module.exports = function(grunt) {
 	 * Create a dev build and start a static server from the 'local' directory
 	 */
 	grunt.registerTask('run', ['build:dev', 'connect', 'watch']);
-
-	/**
-	 * Standalone task to build the icon font
-	 */
-	grunt.registerTask('webfonts', ['webfont']);
 };
