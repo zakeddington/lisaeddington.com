@@ -6,6 +6,7 @@
  * - Open detail view of each item in a modal
  *
  * @requires jQuery
+ * @requires TweenMax
  *
  * @example
  * new Porfolio('.portfolio', {options})
@@ -25,16 +26,16 @@ import tplGrid    from 'templates/grid.hbs';
 
 class Porfolio {
 
-	constructor( containerSelector, objOptions ) {
-		this.initialize( containerSelector, objOptions );
+	constructor(containerSelector, objOptions) {
+		this.initialize(containerSelector, objOptions);
 	}
 
-	initialize( containerSelector, objOptions ) {
+	initialize(containerSelector, objOptions) {
 		/**
 		 * Default configuration for component
 		 */
 		this.options = $.extend({
-			dataAPIs        : [
+			dataAPIs : [
 				{
 					url     : "/assets/data/collages.json",
 					type    : 'JSON',
@@ -83,17 +84,17 @@ class Porfolio {
 		 * UI elements
 		 */
 		this.ui = {
-			container         : null,  // container for portfolio
-			filters           : null,  // both sets of filters
-			bottom            : null   // filters at bottom of page
+			container : null, // container for portfolio
+			filters   : null, // both sets of filters
+			bottom    : null  // filters at bottom of page
 		};
 
 		/**
 		 * Values specific to current grid wall
 		 */
 		this.instance = $.extend({
-			contentLoader  : null,     // placeholder for global loading icon utility
-			dataCategories : []        // placeholder for JSON data
+			contentLoader  : null, // placeholder for global loading icon utility
+			dataCategories : []    // placeholder for JSON data
 		}, this.instance || {});
 
 		/**
@@ -103,20 +104,20 @@ class Porfolio {
 			hash : window.location.hash
 		};
 
-		this._initialize( containerSelector );
+		this._initialize(containerSelector);
 		this._addEventListeners();
 	}
 
 	/**
 	 * Initializes the widget
 	 */
-	_initialize( containerSelector ) {
-		this.ui.container = $( containerSelector );
-		this.ui.filters   = $( this.options.selectorFilters );
-		this.ui.bottom    = $( this.options.selectorBottom );
+	_initialize(containerSelector) {
+		this.ui.container = $(containerSelector);
+		this.ui.filters   = $(this.options.selectorFilters);
+		this.ui.bottom    = $(this.options.selectorBottom);
 
 		// set global loader utility
-		this.instance.contentLoader = new Loader( this.ui.container );
+		this.instance.contentLoader = new Loader(this.ui.container);
 		this.instance.contentLoader.addLoader();
 
 		this._getContent();
@@ -127,7 +128,7 @@ class Porfolio {
 	 * Create our modal widgets for each type of content
 	 */
 	_initModals() {
-		let modal = new ModalMedia( '.modal-photo-trigger', {
+		let modal = new ModalMedia('.modal-photo-trigger', {
 				// options
 			});
 	}
@@ -137,18 +138,18 @@ class Porfolio {
 	 * Then init the layout
 	 */
 	_getContent() {
-		let self          = this,
-			arrayPromises = [];
+		let self = this;
+		let	arrayPromises = [];
 
-		for ( let dataAPI of this.options.dataAPIs ) {
+		for (let dataAPI of this.options.dataAPIs) {
 			arrayPromises.push(
-				dataAPI.apiUtil( dataAPI.url, dataAPI.type )
+				dataAPI.apiUtil(dataAPI.url, dataAPI.type)
 			);
 		}
 
-		this._deferPromises( arrayPromises ).then( function( results ) {
-			for ( let result of results ) {
-				self.instance.dataCategories.push( result );
+		this._deferPromises(arrayPromises).then( function(results) {
+			for (let result of results) {
+				self.instance.dataCategories.push(result);
 			}
 
 			self._setInitialResults();
@@ -161,23 +162,23 @@ class Porfolio {
 	 * @param  {Array} arrPromises - array of promises to resolve
 	 * @return {Object} promise of all the data returned
 	 */
-	_deferPromises( arrPromises ) {
-		let deferred  = $.Deferred(),
-			results   = [],
-			remaining = arrPromises.length;
+	_deferPromises(arrPromises) {
+		let deferred  = $.Deferred();
+		let	results   = [];
+		let	remaining = arrPromises.length;
 
-		for ( let i in arrPromises ) {
+		for (let i in arrPromises) {
 			arrPromises[i]
-				.then( function( response ) {
+				.then( function(response) {
 					// on success, add to results
-					results.push( response );
+					results.push(response);
 				})
-				.always( function( response ) {
+				.always( function(response) {
 					// always mark as finished
 					remaining--;
 					// call it a day, when no more promises are left
-					if ( !remaining ) {
-						deferred.resolve( results );
+					if (!remaining) {
+						deferred.resolve(results);
 					}
 				});
 		}
@@ -191,20 +192,20 @@ class Porfolio {
 	_setInitialResults() {
 		let curCategory = this.state.hash;
 
-		if ( curCategory ) {
+		if (curCategory) {
 			curCategory = curCategory.substring(1);
 		} else {
 			curCategory = this._getRandomCategory();
 		}
 
-		this._setCurCategory( curCategory );
+		this._setCurCategory(curCategory);
 	}
 
 	/**
 	 * Randomly select a category
 	 */
 	_getRandomCategory() {
-		let ranIndex = Math.floor( Math.random() * this.instance.dataCategories.length );
+		let ranIndex = Math.floor(Math.random() * this.instance.dataCategories.length);
 
 		return this.instance.dataCategories[ranIndex].category;
 	}
@@ -213,23 +214,23 @@ class Porfolio {
 	 * Set the active state of filters and display content
 	 * @param {String} strCategory - category name ('drawings', etc)
 	 */
-	_setCurCategory( strCategory ) {
-		let self        = this,
-			curCategory = strCategory;
+	_setCurCategory(strCategory) {
+		let self = this;
+		let	curCategory = strCategory;
 
-		this.ui.filters.removeClass( this.options.classActive );
+		this.ui.filters.removeClass(this.options.classActive);
 
-		$.each( this.ui.filters, function() {
+		$.each(this.ui.filters, function() {
 			let $curFilter = $(this);
 
-			if ( $curFilter.attr('href') === '#' + curCategory ) {
-				$curFilter.addClass( self.options.classActive );
+			if ($curFilter.attr('href') === '#' + curCategory) {
+				$curFilter.addClass(self.options.classActive);
 			}
 		});
 
-		for ( let data of this.instance.dataCategories ) {
-			if ( data.category === curCategory ) {
-				this._displayContent( data );
+		for (let data of this.instance.dataCategories) {
+			if (data.category === curCategory) {
+				this._displayContent(data);
 			}
 		}
 	}
@@ -238,20 +239,20 @@ class Porfolio {
 	 * Display set of results
 	 * @param {Object} dataObj - JSON data for category
 	 */
-	_displayContent( dataObj ) {
-		let self    = this,
-			content = dataObj,
-			html    = this.options.template( content ),
-			$html   = $(html),
-			$items  = $html.find( this.options.selectorItem ).addClass( this.options.classHidden ),
-			$intro  = $html.filter( this.options.selectorIntro ).addClass( this.options.classHidden );
+	_displayContent(dataObj) {
+		let self    = this;
+		let	content = dataObj;
+		let	html    = this.options.template(content);
+		let	$html   = $(html);
+		let	$items  = $html.find(this.options.selectorItem).addClass(this.options.classHidden);
+		let	$intro  = $html.filter(this.options.selectorIntro).addClass(this.options.classHidden);
 
 		this.instance.contentLoader.removeLoader();
 
-		this.ui.container.prepend( $html ).imagesLoaded( { background: this.options.selectorItem }, function() {
+		this.ui.container.prepend($html).imagesLoaded({ background: this.options.selectorItem }, function() {
 
 			// Fade in, slide down the intro
-			TweenMax.fromTo( $intro, self.options.animSpeed, {
+			TweenMax.fromTo($intro, self.options.animSpeed, {
 				opacity    : 0,
 				y          : -30
 			}, {
@@ -263,15 +264,15 @@ class Porfolio {
 				}
 			});
 
-			$intro.removeClass( self.options.classHidden );
+			$intro.removeClass(self.options.classHidden);
 
 			// Fade in each item
-			$.each( $items, function( index ) {
-				let $curItem    = $(this),
-					$curTrigger = $curItem.find('a');
+			$.each($items, function(index) {
+				let $curItem    = $(this);
+				let	$curTrigger = $curItem.find('a');
 
 				// Animate item into view
-				TweenMax.fromTo( $curItem, self.options.animSpeed, {
+				TweenMax.fromTo($curItem, self.options.animSpeed, {
 					opacity    : 0
 				}, {
 					opacity    : 1,
@@ -282,7 +283,7 @@ class Porfolio {
 					}
 				});
 
-				$curItem.removeClass( self.options.classHidden );
+				$curItem.removeClass(self.options.classHidden);
 			});
 		});
 	}
@@ -292,19 +293,19 @@ class Porfolio {
 	}
 
 	// Update hash and display new content
-	_onFilterClick( event ) {
+	_onFilterClick(event) {
 		event.preventDefault();
 
-		let $curFilter  = $( event.currentTarget ),
-			curHash     = $curFilter.attr('href'),
-			curCategory = curHash.substring(1);
+		let $curFilter  = $(event.currentTarget);
+		let	curHash     = $curFilter.attr('href');
+		let	curCategory = curHash.substring(1);
 
-		if ( !$curFilter.hasClass( this.options.classActive ) ) {
+		if (!$curFilter.hasClass(this.options.classActive)) {
 			window.location.hash = curCategory;
 
 			this._removeContent();
 
-			this._setCurCategory( curCategory );
+			this._setCurCategory(curCategory);
 		}
 	}
 

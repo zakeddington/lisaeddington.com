@@ -23,15 +23,15 @@ import ModalWindow from 'widgets/ModalWindow';
 
 class ModalMedia extends ModalWindow {
 
-	initialize( selectorTrigger, objOptions ) {
+	initialize(selectorTrigger, objOptions) {
 		/**
 		 * Default configuration for component
 		 */
 		this.options = $.extend({
-			modalID         : 'modal-media'
+			modalID : 'modal-media'
 		}, objOptions || {});
 
-		super.initialize( selectorTrigger, this.options );
+		super.initialize(selectorTrigger, this.options);
 	}
 
 	_getContent() {
@@ -43,20 +43,20 @@ class ModalMedia extends ModalWindow {
 	 * Display the content in the modal window
 	 */
 	_setContent() {
-		var self          = this,
-			$cloneContent = this.ui.curTrigger.children().clone();
+		var self = this;
+		var	$cloneContent = this.ui.curTrigger.children().clone();
 
 		// Create modal content container
 		this.ui.content = $('<div/>', {
-			'class': this.options.contentClass
-		}).appendTo( this.ui.modal );
+			'class' : this.options.contentClass
+		}).appendTo(this.ui.modal);
 
-		this.ui.content.append( $cloneContent );
+		this.ui.content.append($cloneContent);
 
-		this.ui.content.appendTo( this.ui.modal );
+		this.ui.content.appendTo(this.ui.modal);
 
 		this.ui.content.on('click.' + this.instance.namespace, function() {
-			if ( self.state.isOpen ) {
+			if (self.state.isOpen) {
 				self._closeModal();
 			}
 		});

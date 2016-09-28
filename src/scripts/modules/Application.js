@@ -14,7 +14,7 @@ const Application = {
 	 */
 	initialize: function () {
 
-		new Portfolio( '.portfolio', {
+		new Portfolio('.portfolio', {
 			// options
 		});
 

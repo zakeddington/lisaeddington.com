@@ -7,7 +7,7 @@
  */
 
 class Loader {
-	constructor( $target, objOptions ) {
+	constructor($target, objOptions) {
 		this.$target = $target;
 		this.options = $.extend({
 			overlay : '<div class="loader-overlay"></div>',
