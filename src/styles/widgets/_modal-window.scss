@@ -121,6 +121,17 @@
 		visibility: hidden;
 		width: 100%;
 
+		a {
+			color: $black;
+			font-weight: 500;
+
+			&:hover,
+			&:focus {
+				color: $white;
+				text-decoration: underline;
+			}
+		}
+
 		.item-image {
 			background: center center no-repeat;
 			background-size: contain;

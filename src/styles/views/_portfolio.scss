@@ -16,12 +16,13 @@
 		text-transform: uppercase;
 	}
 
-	ul {
+	> ul {
 		display: flex;
 		flex-wrap: wrap;
 
-		li {
+		> li {
 			display: block;
+			position: relative;
 			width: calc(100% / 6);
 
 			@include breakpoint(mobile) {
@@ -46,6 +47,43 @@
 				&.active {
 					background: $red;
 					color: $white;
+				}
+			}
+
+			ul {
+				display: none;
+				font-size: 16px;
+				position: absolute;
+				top: 100%;
+				width: 100%;
+
+				li {
+					padding-left: 15%;
+
+					a {
+						background: $white-transparent;
+						border-bottom: none;
+						border-left: 1px dashed $grey;
+						padding-left: 15px;
+						text-align: left;
+
+						&:before {
+							border-top: 1px dashed $grey;
+							content: '';
+							display: block;
+							height: 0;
+							left: 0;
+							position: absolute;
+							top: 50%;
+							width: 10px;
+						}
+					}
+				}
+			}
+
+			&:hover {
+				ul {
+					display: block;
 				}
 			}
 		}
@@ -73,6 +111,7 @@
 
 		@include breakpoint(desktop) {
 			padding: 0 15%;
+			text-align: center;
 		}
 	}
 

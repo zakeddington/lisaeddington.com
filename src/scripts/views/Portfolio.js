@@ -222,9 +222,14 @@ class Porfolio {
 
 		$.each(this.ui.filters, function() {
 			let $curFilter = $(this);
+			let $curParent = $curFilter.parents('li').find('.category-parent');
 
 			if ($curFilter.attr('href') === '#' + curCategory) {
 				$curFilter.addClass(self.options.classActive);
+
+				if ($curParent.length) {
+					$curParent.addClass(self.options.classActive);
+				}
 			}
 		});
 
