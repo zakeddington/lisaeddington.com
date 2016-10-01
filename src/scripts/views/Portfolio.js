@@ -67,17 +67,18 @@ class Porfolio {
 					apiUtil : AjaxGet
 				}
 			],
-			template        : tplGrid,              // Handlebars template for grid layout
-			errorMsg        : '<p>Oops. Something went wrong. Please refresh the browser to try again.</p>',
-			selectorIntro   : '.intro',             // selector for the category description
-			selectorItem    : '.item-container',    // selector for each grid item
-			selectorFilters : '.nav-filter a',      // selector for category filters
-			selectorBottom  : '.nav-bottom',        // selector for the filters at bottom of page
-			classActive     : 'active',             // class for setting active states
-			classHidden     : 'hidden',             // class for setting hidden states
-			animSpeed       : 0.5,                  // (s) TweenMax animation speed
-			animEase        : 'Quad.easeOut',       // TweenMax animation ease
-			animDelay       : 0.1,                  // (s) animation delay between items
+			template               : tplGrid,              // Handlebars template for grid layout
+			errorMsg               : '<p>Oops. Something went wrong. Please refresh the browser to try again.</p>',
+			selectorIntro          : '.intro',             // selector for the category description
+			selectorItem           : '.item-container',    // selector for each grid item
+			selectorFilterAnchors : '.nav-filter a',      // selector for desktop category filters
+			selectorFilterSelects  : '.nav-filter select', // selector for mobile category filters
+			selectorBottom         : '.nav-bottom',        // selector for the filters at bottom of page
+			classActive            : 'active',             // class for setting active states
+			classHidden            : 'hidden',             // class for setting hidden states
+			animSpeed              : 0.5,                  // (s) TweenMax animation speed
+			animEase               : 'Quad.easeOut',       // TweenMax animation ease
+			animDelay              : 0.1,                  // (s) animation delay between items
 		}, objOptions || {});
 
 		/**
@@ -112,9 +113,11 @@ class Porfolio {
 	 * Initializes the widget
 	 */
 	_initialize(containerSelector) {
-		this.ui.container = $(containerSelector);
-		this.ui.filters   = $(this.options.selectorFilters);
-		this.ui.bottom    = $(this.options.selectorBottom);
+		this.ui.container      = $(containerSelector);
+		this.ui.filterAnchors = $(this.options.selectorFilterAnchors);
+		this.ui.filterSelects  = $(this.options.selectorFilterSelects);
+		this.ui.filterOptions  = this.ui.filterSelects.find('option');
+		this.ui.bottom         = $(this.options.selectorBottom);
 
 		// set global loader utility
 		this.instance.contentLoader = new Loader(this.ui.container);
@@ -217,10 +220,11 @@ class Porfolio {
 	_setCurCategory(strCategory) {
 		let self = this;
 		let	curCategory = strCategory;
+		let $options = this.ui.filterOptions;
 
-		this.ui.filters.removeClass(this.options.classActive);
+		this.ui.filterAnchors.removeClass(this.options.classActive);
 
-		$.each(this.ui.filters, function() {
+		$.each(this.ui.filterAnchors, function() {
 			let $curFilter = $(this);
 			let $curParent = $curFilter.parents('li').find('.category-parent');
 
@@ -230,6 +234,14 @@ class Porfolio {
 				if ($curParent.length) {
 					$curParent.addClass(self.options.classActive);
 				}
+			}
+		});
+
+		$.each($options, function() {
+			let $curFilter = $(this);
+
+			if ($curFilter.attr('value') === '#' + curCategory) {
+				$curFilter.prop('selected', true);
 			}
 		});
 
@@ -298,20 +310,35 @@ class Porfolio {
 	}
 
 	// Update hash and display new content
-	_onFilterClick(event) {
+	_onFilterAction(event) {
 		event.preventDefault();
 
 		let $curFilter  = $(event.currentTarget);
-		let	curHash     = $curFilter.attr('href');
-		let	curCategory = curHash.substring(1);
 
-		if (!$curFilter.hasClass(this.options.classActive)) {
+		if (event.type === 'click') {
+			let	curHash     = $curFilter.attr('href');
+			let	curCategory = curHash.substring(1);
+
+			if (!$curFilter.hasClass(this.options.classActive)) {
+				window.location.hash = curCategory;
+
+				this._removeContent();
+
+				this._setCurCategory(curCategory);
+			}
+		}
+
+		if (event.type === 'change') {
+			let	curHash     = $curFilter.val();
+			let	curCategory = curHash.substring(1);
+
 			window.location.hash = curCategory;
 
 			this._removeContent();
 
 			this._setCurCategory(curCategory);
 		}
+
 	}
 
 	_onBottomClick() {
@@ -319,7 +346,8 @@ class Porfolio {
 	}
 
 	_addEventListeners() {
-		this.ui.filters.on('click', $.proxy(this._onFilterClick, this));
+		this.ui.filterAnchors.on('click', $.proxy(this._onFilterAction, this));
+		this.ui.filterSelects.on('change', $.proxy(this._onFilterAction, this));
 		this.ui.bottom.on('click', $.proxy(this._onBottomClick, this));
 	}
 }
