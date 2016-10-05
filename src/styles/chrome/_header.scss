@@ -37,8 +37,9 @@ header {
 		}
 
 		@include breakpoint(mobile) {
-			font-size: 34px;
-			line-height: 40px;
+			font-size: 40px;
+			line-height: 45px;
+			top: 30px;
 			width: 100%;
 		}
 
@@ -63,7 +64,7 @@ header {
 		top: 18px;
 
 		@include breakpoint(mobile) {
-			top: 50px;
+			top: 5px;
 		}
 
 		li {

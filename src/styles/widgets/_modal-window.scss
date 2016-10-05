@@ -100,7 +100,11 @@
 	z-index: 12;
 
 	::selection {
-		background: $red;
+		background: $white;
+	}
+
+	&:focus {
+		outline: none;
 	}
 
 	&.active {

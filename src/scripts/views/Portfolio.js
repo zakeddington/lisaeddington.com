@@ -141,7 +141,6 @@ class Porfolio {
 	 * Then init the layout
 	 */
 	_getContent() {
-		let self = this;
 		let	arrayPromises = [];
 
 		for (let dataAPI of this.options.dataAPIs) {
@@ -152,11 +151,11 @@ class Porfolio {
 
 		this._deferPromises(arrayPromises).then( function(results) {
 			for (let result of results) {
-				self.instance.dataCategories.push(result);
+				this.instance.dataCategories.push(result);
 			}
 
-			self._setInitialResults();
-		});
+			this._setInitialResults();
+		}.bind(this));
 	}
 
 	/**

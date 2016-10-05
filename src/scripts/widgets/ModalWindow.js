@@ -216,8 +216,6 @@ class ModalWindow {
 	 * Add all modal interaction handlers, namespaced to this instance
 	 */
 	_addEventHandlers() {
-		var self = this;
-
 		this.ui.closeButton = $('<a />');
 		this.ui.closeButton.addClass(this.options.closeBtnClass);
 		this.ui.closeButton.attr('href', '#close');
@@ -227,20 +225,24 @@ class ModalWindow {
 		this.ui.modal.on('click.' + this.instance.namespace, '.' + this.options.closeBtnClass, $.proxy(this._onCloseBtnClick, this));
 
 		this.ui.overlay.on('click.' + this.instance.namespace, function() {
-			if (self.state.isOpen) {
-				self._closeModal();
+			if (this.state.isOpen) {
+				this._closeModal();
 			}
-		});
+		}.bind(this));
 
 		this.ui.window.on('keydown.' + this.instance.namespace, $.proxy(this._onWindowKeydown, this));
 
 		this.ui.document.on('focusin.' + this.instance.namespace, function(event) {
+			let $curTarget = $(event.target);
+
 			// If modal is open and the focus leaves the modal
-			if (self.state.isOpen && !self.ui.modal.find($(event.target)).length) {
-				// Return focus to the close button
-				self.ui.closeButton.focus();
+			if (this.state.isOpen) {
+				if (!$curTarget.is(this.ui.modal) && !this.ui.modal.find($curTarget).length) {
+					// Return focus to the close button
+					this.ui.closeButton.focus();
+				}
 			}
-		});
+		}.bind(this));
 	}
 
 	/**
@@ -275,7 +277,7 @@ class ModalWindow {
 	 * This function gets overwritten in sub class modals
 	 */
 	_getContent() {
-		var target = $(this.ui.curTrigger.attr('href'));
+		let target = $(this.ui.curTrigger.attr('href'));
 		this._setContent(target);
 	}
 

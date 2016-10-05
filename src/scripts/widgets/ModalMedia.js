@@ -43,8 +43,7 @@ class ModalMedia extends ModalWindow {
 	 * Display the content in the modal window
 	 */
 	_setContent() {
-		var self = this;
-		var	$cloneContent = this.ui.curTrigger.children().clone();
+		let	$cloneContent = this.ui.curTrigger.children().clone();
 
 		// Create modal content container
 		this.ui.content = $('<div/>', {
@@ -56,10 +55,10 @@ class ModalMedia extends ModalWindow {
 		this.ui.content.appendTo(this.ui.modal);
 
 		this.ui.content.on('click.' + this.instance.namespace, function() {
-			if (self.state.isOpen) {
-				self._closeModal();
+			if (this.state.isOpen) {
+				this._closeModal();
 			}
-		});
+		}.bind(this));
 	}
 }
 

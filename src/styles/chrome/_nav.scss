@@ -8,6 +8,10 @@
 	text-align: center;
 	width: 100%;
 
+	&.nav-bottom {
+		margin-bottom: 30px;
+	}
+
 	@include breakpoint(desktop) {
 		padding: 20px 0;
 
@@ -105,7 +109,12 @@
 	}
 
 	@include breakpoint(tablet, mobile) {
-		padding: 10px 0 20px;
+		border-top: 1px dashed $grey;
+		padding: 15px 0;
+
+		&.nav-bottom {
+			margin-top: 10px;
+		}
 
 		.nav-desktop {
 			display: none;
