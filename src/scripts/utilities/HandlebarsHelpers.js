@@ -11,6 +11,13 @@ const HandlebarsHelpers = function() {
 		return options.inverse(this);
 	});
 
+	Handlebars.registerHelper('ifOr', function(v1, v2, options) {
+		if (v1 || v2) {
+			return options.fn(this);
+		}
+		return options.inverse(this);
+	});
+
 	Handlebars.registerHelper('compare', function (lvalue, operator, rvalue, options) {
 
 		var operators, result;

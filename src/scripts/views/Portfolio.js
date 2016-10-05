@@ -37,12 +37,12 @@ class Porfolio {
 		this.options = $.extend({
 			dataAPIs : [
 				{
-					url     : "/assets/data/collages.json",
+					url     : "/assets/data/collage.json",
 					type    : 'JSON',
 					apiUtil : AjaxGet
 				},
 				{
-					url     : "/assets/data/drawings.json",
+					url     : "/assets/data/drawing.json",
 					type    : 'JSON',
 					apiUtil : AjaxGet
 				},
@@ -52,17 +52,17 @@ class Porfolio {
 					apiUtil : AjaxGet
 				},
 				{
-					url     : "/assets/data/nature.json",
+					url     : "/assets/data/floral-art.json",
 					type    : 'JSON',
 					apiUtil : AjaxGet
 				},
 				{
-					url     : "/assets/data/paintings.json",
+					url     : "/assets/data/painting.json",
 					type    : 'JSON',
 					apiUtil : AjaxGet
 				},
 				{
-					url     : "/assets/data/sketches.json",
+					url     : "/assets/data/mugs.json",
 					type    : 'JSON',
 					apiUtil : AjaxGet
 				}

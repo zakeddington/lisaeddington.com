@@ -11,11 +11,11 @@
 			<a href="#" class="modal-photo-trigger">
 				<div class="item-image" style="background-image: url({{image}});" />
 
-				{{#ifAnd title description}}
+				{{#ifOr title description}}
 					<div class="item-info">
 				{{else}}
 					<div class="item-info no-info">
-				{{/ifAnd}}
+				{{/ifOr}}
 
 					{{#if title }}
 						<h3>{{{title}}}</h3>
