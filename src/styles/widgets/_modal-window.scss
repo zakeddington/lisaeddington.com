@@ -99,6 +99,10 @@
 	width: 100%;
 	z-index: 12;
 
+	::selection {
+		background: $red;
+	}
+
 	&.active {
 		margin-top: 0;
 		opacity: 1;

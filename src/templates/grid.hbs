@@ -19,6 +19,8 @@
 
 					{{#if title }}
 						<h3>{{{title}}}</h3>
+					{{else}}
+						<h3 class="offscreen">{{../category}} image {{@index}}</h3>
 					{{/if}}
 					{{#if description }}
 						<p>{{{description}}}</p>

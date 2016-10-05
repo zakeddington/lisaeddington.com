@@ -37,7 +37,7 @@ header {
 		}
 
 		@include breakpoint(mobile) {
-			font-size: 30px;
+			font-size: 34px;
 			line-height: 40px;
 			width: 100%;
 		}
@@ -59,7 +59,6 @@ header {
 	}
 
 	ul {
-		height: 24px;
 		position: absolute;
 		top: 18px;
 
@@ -68,20 +67,23 @@ header {
 		}
 
 		li {
-			display: inline-block;
-			height: 100%;
+			display: block;
+			float: left;
 			vertical-align: middle;
 
 			a {
 				display: block;
 				font-size: 14px;
 				font-weight: 400;
-				height: 100%;
-				line-height: 24px;
+				line-height: 30px;
 				overflow: hidden;
 				text-transform: uppercase;
 				transition: all $anim-speed ease-out;
 				width: 30px;
+
+				@include breakpoint(mobile) {
+					line-height: 25px;
+				}
 
 				&:before {
 					opacity: 0.7;
@@ -96,7 +98,7 @@ header {
 				}
 
 				&.about {
-					margin-right: 10px;
+					margin-right: 20px;
 					width: auto;
 
 					&:before {
@@ -129,9 +131,12 @@ header {
 				position: relative;
 				width: 30px;
 
+				@include breakpoint(desktop) {
+					margin-left: 10px;
+				}
+
 				@include breakpoint(mobile) {
-					height: 22px;
-					width: 22px;
+					height: 25px;
 				}
 
 				.icon {
