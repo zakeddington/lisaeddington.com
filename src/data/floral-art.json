@@ -1,45 +1,45 @@
 {
 	"category" : "floral-art",
-	"intro"    : "Mandala and typography design made from found items in nature.",
+	"intro"    : "Mandala and typography design made from items found in nature.",
 	"items"    : [
 		{
-			"title"         : "",
-			"description"   : "",
+			"title"         : "Love (Rose petals, violet petals, and greenery)",
+			"description"   : "18x24″ | 2016",
 			"image"         : "/assets/img/nature/love.jpg"
 		},
 		{
-			"title"         : "",
-			"description"   : "",
+			"title"         : "YAS (Pine needles and dandelion flowers)",
+			"description"   : "18x24″ | 2016",
 			"image"         : "/assets/img/nature/yas.jpg"
 		},
 		{
-			"title"         : "",
-			"description"   : "",
+			"title"         : "Meh (Violet petals)",
+			"description"   : "18x24″ | 2016",
 			"image"         : "/assets/img/nature/meh.jpg"
 		},
 		{
-			"title"         : "",
-			"description"   : "",
+			"title"         : "Ugh (Rose petals)",
+			"description"   : "18x24″ | 2016",
 			"image"         : "/assets/img/nature/ugh.jpg"
 		},
 		{
-			"title"         : "",
-			"description"   : "",
+			"title"         : "Dandelion Mandala",
+			"description"   : "18x24″ | 2016",
 			"image"         : "/assets/img/nature/dandelion-mandala.jpg"
 		},
 		{
-			"title"         : "",
-			"description"   : "",
+			"title"         : "Pinecone Mandala",
+			"description"   : "12x12″ | 2015",
 			"image"         : "/assets/img/nature/pinecone-mandala.jpg"
 		},
 		{
-			"title"         : "",
-			"description"   : "",
+			"title"         : "Maple Leaf Mandala Star",
+			"description"   : "36x36″ | 2015",
 			"image"         : "/assets/img/nature/maple-leaf-mandala.jpg"
 		},
 		{
-			"title"         : "",
-			"description"   : "",
+			"title"         : "Cedar Mandala",
+			"description"   : "12x12″ | 2015",
 			"image"         : "/assets/img/nature/cedar-mandala.jpg"
 		}
 	]

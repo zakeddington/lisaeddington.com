@@ -5,8 +5,10 @@
 
 .nav-filter {
 	@include clearfix();
+	position: relative;
 	text-align: center;
 	width: 100%;
+	z-index: 1;
 
 	&.nav-bottom {
 		margin-bottom: 30px;
@@ -64,7 +66,7 @@
 						padding-left: 15%;
 
 						a {
-							background: $white-transparent;
+							background: rgba($white, 0);
 							border-bottom: none;
 							border-left: 1px dashed $grey;
 							padding-left: 15px;
