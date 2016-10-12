@@ -110,6 +110,18 @@
 		}
 	}
 
+	@include breakpoint(tablet) {
+		.nav-mobile {
+			width: 50%;
+		}
+	}
+
+	@include breakpoint(mobile) {
+		.nav-mobile {
+			width: 80%;
+		}
+	}
+
 	@include breakpoint(tablet, mobile) {
 		border-top: 1px dashed $grey;
 		padding: 15px 0;
@@ -132,7 +144,6 @@
 			font-size: 16px;
 			margin: auto;
 			position: relative;
-			width: 50%;
 
 			&:before {
 				border-left: 6px solid transparent;

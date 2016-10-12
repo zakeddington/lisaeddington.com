@@ -29,13 +29,21 @@
 		display: flex;
 		height: 0;
 		overflow: hidden;
-		position: relative;
 		padding-top: 25%;
+		position: relative;
 		width: 25%;
 
+		@include breakpoint(tablet) {
+			padding-top: 33%;
+			width: 33%;
+		}
+
 		@include breakpoint(mobile) {
-			padding-top: 50%;
-			width: 50%;
+			display: block;
+			margin-bottom: 20%;
+			overflow: visible;
+			padding-top: 100%;
+			width: 100%;
 		}
 
 		.item {
@@ -49,6 +57,7 @@
 		}
 
 		.modal-photo-trigger {
+			border: 1px dashed $grey;
 			border-radius: 50%;
 			display: block;
 			height: 100%;
@@ -57,9 +66,15 @@
 			transition: all $anim-speed ease-out;
 			width: 100%;
 
+			@include breakpoint(mobile) {
+				border: none;
+				border-radius: 0;
+				overflow: visible;
+			}
+
 			.item-image {
 				background: center center no-repeat;
-				background-size: contain;
+				background-size: cover;
 				border-radius: 50%;
 				display: block;
 				height: 100%;
@@ -67,6 +82,12 @@
 				position: absolute;
 				top: 0;
 				width: 100%;
+
+				@include breakpoint(mobile) {
+					background-size: contain;
+					border-radius: 0;
+					position: relative;
+				}
 			}
 
 			.item-info {
@@ -81,36 +102,59 @@
 				transition: all $anim-speed ease-out;
 				width: 100%;
 
+				@include breakpoint(mobile) {
+					background: none;
+					border-radius: 0;
+					bottom: 0;
+					display: block;
+					height: auto;
+					opacity: 1;
+					position: relative;
+					top: auto;
+				}
+
 				&.no-info {
 					background: rgba($blue, 0.5);
 				}
 
 				h3 {
-					color: $black;
 					align-items: center;
+					color: $black;
 					display: flex;
 					margin: auto;
 					padding: 10px;
 					text-align: center;
+
+					@include breakpoint(mobile) {
+						display: block;
+					}
 				}
 
 				p {
 					display: none;
+
+					@include breakpoint(mobile) {
+						color: $black;
+						display: block;
+						text-align: center;
+					}
 				}
 			}
 
-			&:hover {
-				.item-image {
-					filter: grayscale(1);
-				}
-
-				.item-info {
-					opacity: 1;
-				}
-			}
-
+			&:hover,
 			&:focus {
-				border: 1px dashed $grey;
+				@include breakpoint(desktop, tablet) {
+					.item-image {
+						filter: grayscale(1);
+					}
+
+					.item-info {
+						opacity: 1;
+					}
+				}
+				@include breakpoint(mobile) {
+					border: 1px dashed $grey;
+				}
 			}
 		}
 	}

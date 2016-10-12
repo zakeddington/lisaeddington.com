@@ -83,18 +83,15 @@
 // Default layout
 .modal-window {
 	backface-visibility: hidden;
-	// background: $white;
 	display: block;
+	height: 100%;
 	left: 50%;
 	margin-top: 50px;
-	height: 100%;
 	opacity: 0;
-	// padding: 1%;
 	position: fixed;
 	top: 50%;
 	transform: translate(-50%, -50%);
 	transition: all $anim-speed ease-out;
-	transition-delay: 0;
 	visibility: hidden;
 	width: 100%;
 	z-index: 12;
@@ -160,6 +157,10 @@
 			padding: 10px;
 			position: absolute;
 
+			@include breakpoint(mobile) {
+				width: 100%;
+			}
+
 			&.no-info {
 				display: none;
 			}
@@ -179,9 +180,9 @@
 	background: rgba($blue, 0.8);
 	border: 1px dashed rgba($white, 0.8);
 	height: auto;
-	min-height: 30vw;
 	max-height: 90vh;
 	max-width: 980px;
+	min-height: 30vw;
 	overflow-y: auto;
 	padding: 20px;
 	width: 90vw;

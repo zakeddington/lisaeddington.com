@@ -85,9 +85,10 @@ class Porfolio {
 		 * UI elements
 		 */
 		this.ui = {
-			container : null, // container for portfolio
-			filters   : null, // both sets of filters
-			bottom    : null  // filters at bottom of page
+			container      : null, // container for portfolio
+			filterAnchors  : null, // category nav anchors (desktop)
+			filterSelects  : null, // category nav select (tablet/mobile)
+			filterOptions  : null  // category nav options (tablet/mobile)
 		};
 
 		/**
@@ -114,10 +115,9 @@ class Porfolio {
 	 */
 	_initialize(containerSelector) {
 		this.ui.container      = $(containerSelector);
-		this.ui.filterAnchors = $(this.options.selectorFilterAnchors);
+		this.ui.filterAnchors  = $(this.options.selectorFilterAnchors);
 		this.ui.filterSelects  = $(this.options.selectorFilterSelects);
 		this.ui.filterOptions  = this.ui.filterSelects.find('option');
-		this.ui.bottom         = $(this.options.selectorBottom);
 
 		// set global loader utility
 		this.instance.contentLoader = new Loader(this.ui.container);
@@ -332,22 +332,17 @@ class Porfolio {
 			let	curCategory = curHash.substring(1);
 
 			window.location.hash = curCategory;
+			window.scrollTo(0,0);
 
 			this._removeContent();
 
 			this._setCurCategory(curCategory);
 		}
-
-	}
-
-	_onBottomClick() {
-		window.scrollTo(0,0);
 	}
 
 	_addEventListeners() {
 		this.ui.filterAnchors.on('click', $.proxy(this._onFilterAction, this));
 		this.ui.filterSelects.on('change', $.proxy(this._onFilterAction, this));
-		this.ui.bottom.on('click', $.proxy(this._onBottomClick, this));
 	}
 }
 
