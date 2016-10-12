@@ -4,40 +4,46 @@
 //
 
 // Colors
-$black                     : #000;
-$black-transparent         : rgba($black, 0.6);
-$blue                      : #1bd3e3;
-$red                       : #f41d07;
-$grey                      : #ddd;
-$grey-dark                 : #ccc;
-$white                     : #fff;
-$white-transparent         : rgba($white, 0.6);
+$black                       : #000;
+$black-transparent           : rgba($black, 0.6);
+$blue                        : #1bd3e3;
+$red                         : #f41d07;
+$grey                        : #ddd;
+$grey-dark                   : #ccc;
+$white                       : #fff;
+$white-transparent           : rgba($white, 0.6);
 
-$text-default              : $black;
+$text-default                : $black;
 
 // Paths
-$image-path                : '../img';
+$image-path                  : '../img';
 
 // Fonts
-$font-family-default       : 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-family-light         : 'Quicksand', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-default         : 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-light           : 'Quicksand', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 // Animation
-$anim-speed                : 0.3s;
+$anim-speed                  : 0.3s;
 
 // Breakpoints
-$desktop-wide-breakpoint-min: 1261px;
-$desktop-wide-breakpoint-max: 999999px;
-$desktop-wide-width: 1261px;
+$desktop-wide-breakpoint-min : 1261px;
+$desktop-wide-breakpoint-max : 999999px;
+$desktop-wide-width          : 1261px;
 
-$desktop-breakpoint-min: 769px;
-$desktop-breakpoint-max: 1260px;
-$desktop-width: 1260px;
+$desktop-breakpoint-min      : 769px;
+$desktop-breakpoint-max      : 1260px;
+$desktop-width               : 1260px;
 
-$tablet-breakpoint-min: 540px;
-$tablet-breakpoint-max: 768px;
-$tablet-width: 540px;
+$tablet-breakpoint-min       : 540px;
+$tablet-breakpoint-max       : 768px;
+$tablet-width                : 540px;
 
-$mobile-breakpoint-min:	1px;
-$mobile-breakpoint-max: 539px;
-$mobile-width: 320px;
+$mobile-breakpoint-min       : 1px;
+$mobile-breakpoint-max       : 539px;
+$mobile-width                : 320px;
+
+// z-index
+$z-index-default             : 1;
+$z-index-loader              : 2;
+$z-index-modal-overlay       : 3;
+$z-index-modal-window        : 4;

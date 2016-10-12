@@ -81,7 +81,8 @@ class Porfolio {
 			errorMsg               : '<p>Oops. Something went wrong. Please refresh the browser to try again.</p>',
 			selectorIntro          : '.intro',             // selector for the category description
 			selectorItem           : '.item-container',    // selector for each grid item
-			selectorFilterAnchors : '.nav-filter a',      // selector for desktop category filters
+			selectorItemBg         : '.item-image',        // selector for background image element
+			selectorFilterAnchors  : '.nav-filter a',      // selector for desktop category filters
 			selectorFilterSelects  : '.nav-filter select', // selector for mobile category filters
 			selectorBottom         : '.nav-bottom',        // selector for the filters at bottom of page
 			classActive            : 'active',             // class for setting active states
@@ -227,9 +228,11 @@ class Porfolio {
 	 * @param {String} strCategory - category name ('drawings', etc)
 	 */
 	_setCurCategory(strCategory) {
-		let self = this;
+		let self        = this;
 		let	curCategory = strCategory;
-		let $options = this.ui.filterOptions;
+		let $options    = this.ui.filterOptions;
+
+		this.instance.contentLoader.addLoader();
 
 		this.ui.filterAnchors.removeClass(this.options.classActive);
 
@@ -273,9 +276,8 @@ class Porfolio {
 		let	$items  = $html.find(this.options.selectorItem).addClass(this.options.classHidden);
 		let	$intro  = $html.filter(this.options.selectorIntro).addClass(this.options.classHidden);
 
-		this.instance.contentLoader.removeLoader();
-
-		this.ui.container.prepend($html).imagesLoaded({ background: this.options.selectorItem }, function() {
+		this.ui.container.prepend($html).imagesLoaded({ background: this.options.selectorItemBg }, function(instance) {
+			self.instance.contentLoader.removeLoader();
 
 			// Fade in, slide down the intro
 			TweenMax.fromTo($intro, self.options.animSpeed, {
@@ -285,7 +287,7 @@ class Porfolio {
 				opacity    : 1,
 				y          : 0,
 				ease       : self.options.animEase,
-				onComplete :function() {
+				onComplete : function() {
 					$intro.removeAttr('style');
 				}
 			});
@@ -304,7 +306,7 @@ class Porfolio {
 					opacity    : 1,
 					delay      : self.options.animDelay * index,
 					ease       : self.options.animEase,
-					onComplete :function() {
+					onComplete : function() {
 						$curItem.removeAttr('style');
 					}
 				});
@@ -322,7 +324,7 @@ class Porfolio {
 	_onFilterAction(event) {
 		event.preventDefault();
 
-		let $curFilter  = $(event.currentTarget);
+		let $curFilter = $(event.currentTarget);
 
 		if (event.type === 'click') {
 			let	curHash     = $curFilter.attr('href');

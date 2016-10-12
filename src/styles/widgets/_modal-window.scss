@@ -11,7 +11,7 @@
 	right: 0;
 	top: 0;
 	width: 50px;
-	z-index: 1;
+	z-index: $z-index-default;
 
 	@include breakpoint(mobile) {
 		height: 30px;
@@ -63,7 +63,7 @@
 	transition: all $anim-speed;
 	visibility: hidden;
 	width: 100%;
-	z-index: 11;
+	z-index: $z-index-modal-overlay;
 
 	&.active {
 		display: block;
@@ -94,7 +94,7 @@
 	transition: all $anim-speed ease-out;
 	visibility: hidden;
 	width: 100%;
-	z-index: 12;
+	z-index: $z-index-modal-window;
 
 	::selection {
 		background: $white;

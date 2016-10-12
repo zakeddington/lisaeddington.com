@@ -8,7 +8,7 @@
 	position: relative;
 	text-align: center;
 	width: 100%;
-	z-index: 1;
+	z-index: $z-index-default;
 
 	&.nav-bottom {
 		margin-bottom: 30px;
@@ -66,7 +66,7 @@
 						padding-left: 15%;
 
 						a {
-							background: rgba($white, 0);
+							background: rgba($white, 0.9);
 							border-bottom: none;
 							border-left: 1px dashed $grey;
 							padding-left: 15px;
