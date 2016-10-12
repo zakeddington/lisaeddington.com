@@ -31,6 +31,12 @@ module.exports = function (grunt) {
 					src: '**/*.*',
 					dest: '<%= publicData %>',
 					expand: true
+				},
+				{
+					cwd: '<%= sourceImages %>',
+					src: '**/*.*',
+					dest: '<%= publicImages %>',
+					expand: true
 				}
 			]
 		}

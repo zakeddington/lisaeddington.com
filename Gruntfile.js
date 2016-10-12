@@ -78,7 +78,6 @@ module.exports = function(grunt) {
 		var tasks = [
 			'clean:' + target,
 			'includereplace:' + target,
-			//'imagemin:' + target,
 			'copy:' + target,
 			'jshint',
 			'concat:vendor_' + target,
@@ -89,7 +88,6 @@ module.exports = function(grunt) {
 
 		// Optimize js for dist build only
 		if ( target === 'dist' ) {
-			tasks.push('imagemin:dist');
 			tasks.push('cssmin');
 			tasks.push('uglify');
 		}

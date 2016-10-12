@@ -13,7 +13,7 @@ module.exports = function (grunt) {
 					"meta-title" : "<%= metaTitle %>",
 					"meta-desc"  : "<%= pkgDesc %>",
 					"asset-name" : "<%= assetName %>",
-					"img-path"   : "/assets/img"
+					"img-path"   : "assets/img"
 				},
 				includesDir: '<%= sourceIncludes %>'
 			},
@@ -31,7 +31,7 @@ module.exports = function (grunt) {
 					"meta-title": "<%= metaTitle %>",
 					"meta-desc"  : "<%= pkgDesc %>",
 					"asset-name": "<%= assetName %>",
-					"img-path": "/assets/img"
+					"img-path": "assets/img"
 				},
 				includesDir: '<%= sourceIncludes %>'
 			},
