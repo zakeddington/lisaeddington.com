@@ -37,32 +37,42 @@ class Porfolio {
 		this.options = $.extend({
 			dataAPIs : [
 				{
-					url     : "/assets/data/collage.json",
+					url     : "assets/data/drawing.json",
 					type    : 'JSON',
 					apiUtil : AjaxGet
 				},
 				{
-					url     : "/assets/data/drawing.json",
+					url     : "assets/data/collage.json",
 					type    : 'JSON',
 					apiUtil : AjaxGet
 				},
 				{
-					url     : "/assets/data/lettering.json",
+					url     : "assets/data/lettering.json",
 					type    : 'JSON',
 					apiUtil : AjaxGet
 				},
 				{
-					url     : "/assets/data/floral-art.json",
+					url     : "assets/data/painting.json",
 					type    : 'JSON',
 					apiUtil : AjaxGet
 				},
 				{
-					url     : "/assets/data/painting.json",
+					url     : "assets/data/sketch-book.json",
 					type    : 'JSON',
 					apiUtil : AjaxGet
 				},
 				{
-					url     : "/assets/data/mugs.json",
+					url     : "assets/data/mugs.json",
+					type    : 'JSON',
+					apiUtil : AjaxGet
+				},
+				{
+					url     : "assets/data/floral-art.json",
+					type    : 'JSON',
+					apiUtil : AjaxGet
+				},
+				{
+					url     : "assets/data/deconstructed-mandalas.json",
 					type    : 'JSON',
 					apiUtil : AjaxGet
 				}

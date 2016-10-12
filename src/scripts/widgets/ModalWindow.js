@@ -188,13 +188,13 @@ class ModalWindow {
 	 * Start all actions to close modal window
 	 */
 	_closeModal() {
-		this.ui.window.scrollTop(this.state.winScrollTop);
-
 		if (this.ui.body.hasClass('modal-open')) {
 			this.ui.body.removeClass('modal-open').removeAttr('style');
 		}
 		this.ui.modal.attr('aria-hidden', 'true');
 		this.ui.ariaHideElements.attr('aria-hidden', 'false');
+
+		this.ui.window.scrollTop(this.state.winScrollTop);
 
 		this.ui.overlay.hide();
 		// this.ui.modal.hide();
