@@ -45,10 +45,15 @@
 			$breakpoint-min: $tablet-breakpoint-min;
 			$breakpoint-max: $tablet-breakpoint-max;
 		}
-		
+
 		@else if $breakpoint == desktop {
 			$breakpoint-min: $desktop-breakpoint-min;
 			$breakpoint-max: $desktop-breakpoint-max;
+		}
+
+		@else if $breakpoint == desktop-wide {
+			$breakpoint-min: $desktop-wide-breakpoint-min;
+			$breakpoint-max: $desktop-wide-breakpoint-max;
 		}
 
 		@media (min-width: $breakpoint-min) and (max-width: $breakpoint-max) {

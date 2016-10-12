@@ -28,22 +28,28 @@
 		align-items: center;
 		display: flex;
 		height: 0;
+		margin: auto;
 		overflow: hidden;
-		padding-top: 25%;
+		padding-top: 24vw;
 		position: relative;
-		width: 25%;
+		width: 24vw;
+
+		@include breakpoint(desktop-wide) {
+			padding-top: 315px;
+			width: 315px;
+		}
 
 		@include breakpoint(tablet) {
-			padding-top: 33%;
-			width: 33%;
+			padding-top: 32vw;
+			width: 32vw;
 		}
 
 		@include breakpoint(mobile) {
 			display: block;
-			margin-bottom: 20%;
+			margin-bottom: 20vw;
 			overflow: visible;
-			padding-top: 100%;
-			width: 100%;
+			padding-top: 100vw;
+			width: 100vw;
 		}
 
 		.item {

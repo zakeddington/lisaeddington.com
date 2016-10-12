@@ -26,8 +26,12 @@ $font-family-light         : 'Quicksand', 'Helvetica Neue', Helvetica, Arial, sa
 $anim-speed                : 0.3s;
 
 // Breakpoints
+$desktop-wide-breakpoint-min: 1261px;
+$desktop-wide-breakpoint-max: 999999px;
+$desktop-wide-width: 1261px;
+
 $desktop-breakpoint-min: 769px;
-$desktop-breakpoint-max: 9999px;
+$desktop-breakpoint-max: 1260px;
 $desktop-width: 1260px;
 
 $tablet-breakpoint-min: 540px;
