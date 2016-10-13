@@ -132,7 +132,7 @@ header {
 				position: relative;
 				width: 30px;
 
-				@include breakpoint(desktop) {
+				@media (min-width: $desktop-breakpoint-min) {
 					margin-left: 10px;
 				}
 

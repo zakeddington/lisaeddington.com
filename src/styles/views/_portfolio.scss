@@ -11,7 +11,7 @@
 	.intro {
 		padding: 0 15px;
 
-		@include breakpoint(desktop) {
+		@media (min-width: $desktop-breakpoint-min) {
 			padding: 0 15%;
 			text-align: center;
 		}
@@ -149,7 +149,7 @@
 
 			&:hover,
 			&:focus {
-				@include breakpoint(desktop, tablet) {
+				@media (min-width: $tablet-breakpoint-min) {
 					.item-image {
 						filter: grayscale(1);
 					}

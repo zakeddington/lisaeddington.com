@@ -5,42 +5,42 @@
 		{
 			"title"         : "Love (Rose petals, violet petals, and greenery)",
 			"description"   : "18x24″ | 2016",
-			"image"         : "assets/img/nature/love.jpg"
+			"image"         : "assets/img/other-projects/floral-art/love.jpg"
 		},
 		{
 			"title"         : "YAS (Pine needles and dandelion flowers)",
 			"description"   : "18x24″ | 2016",
-			"image"         : "assets/img/nature/yas.jpg"
+			"image"         : "assets/img/other-projects/floral-art/yas.jpg"
 		},
 		{
 			"title"         : "Meh (Violet petals)",
 			"description"   : "18x24″ | 2016",
-			"image"         : "assets/img/nature/meh.jpg"
+			"image"         : "assets/img/other-projects/floral-art/meh.jpg"
 		},
 		{
 			"title"         : "Ugh (Rose petals)",
 			"description"   : "18x24″ | 2016",
-			"image"         : "assets/img/nature/ugh.jpg"
+			"image"         : "assets/img/other-projects/floral-art/ugh.jpg"
 		},
 		{
 			"title"         : "Dandelion Mandala",
 			"description"   : "18x24″ | 2016",
-			"image"         : "assets/img/nature/dandelion-mandala.jpg"
+			"image"         : "assets/img/other-projects/floral-art/dandelion-mandala.jpg"
 		},
 		{
 			"title"         : "Pinecone Mandala",
 			"description"   : "12x12″ | 2015",
-			"image"         : "assets/img/nature/pinecone-mandala.jpg"
+			"image"         : "assets/img/other-projects/floral-art/pinecone-mandala.jpg"
 		},
 		{
 			"title"         : "Maple Leaf Mandala Star",
 			"description"   : "36x36″ | 2015",
-			"image"         : "assets/img/nature/maple-leaf-mandala.jpg"
+			"image"         : "assets/img/other-projects/floral-art/maple-leaf-mandala.jpg"
 		},
 		{
 			"title"         : "Cedar Mandala",
 			"description"   : "12x12″ | 2015",
-			"image"         : "assets/img/nature/cedar-mandala.jpg"
+			"image"         : "assets/img/other-projects/floral-art/cedar-mandala.jpg"
 		}
 	]
 }

@@ -1,5 +1,36 @@
 {
 	"category" : "deconstructed-mandalas",
 	"intro"    : "These designs are made by deconstructing unsuccessful prints of my own drawings, and reconstructing the pieces into a new original design. All designs are cut and assembled by hand.",
-	"items"    : []
+	"items"    : [
+		{
+			"title"         : "Untitled",
+			"description"   : "Source: Sugar Skull no.1 | 8.5x11” | 2016",
+			"image"         : "assets/img/other-projects/deconstructed-mandalas/6.jpg"
+		},
+		{
+			"title"         : "Untitled",
+			"description"   : "Source: I Met a Friendly Deer | 8.5x11” | 2016",
+			"image"         : "assets/img/other-projects/deconstructed-mandalas/5.jpg"
+		},
+		{
+			"title"         : "Untitled",
+			"description"   : "Sources: Flower no.3, Love and Death, I Can See For Miles | 8.5x11” | 2016",
+			"image"         : "assets/img/other-projects/deconstructed-mandalas/4.jpg"
+		},
+		{
+			"title"         : "Untitled",
+			"description"   : "Sources: Sugar Skull no.2, Thirty-six Eyes | 8.5x11” | 2016",
+			"image"         : "assets/img/other-projects/deconstructed-mandalas/3.jpg"
+		},
+		{
+			"title"         : "Untitled",
+			"description"   : "Sources: Flower no.1, Flower no.2 | 8.5x11” | 2016",
+			"image"         : "assets/img/other-projects/deconstructed-mandalas/2.jpg"
+		},
+		{
+			"title"         : "Untitled",
+			"description"   : "Sources: Sugar Skull no.1, Love and Death, Straight Edge | 8.5x11” | 2016",
+			"image"         : "assets/img/other-projects/deconstructed-mandalas/1.jpg"
+		}
+	]
 }

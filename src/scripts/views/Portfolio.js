@@ -57,12 +57,7 @@ class Porfolio {
 					apiUtil : AjaxGet
 				},
 				{
-					url     : "assets/data/sketch-book.json",
-					type    : 'JSON',
-					apiUtil : AjaxGet
-				},
-				{
-					url     : "assets/data/mugs.json",
+					url     : "assets/data/badly-drawn-mugs.json",
 					type    : 'JSON',
 					apiUtil : AjaxGet
 				},
