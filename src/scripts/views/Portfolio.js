@@ -73,7 +73,7 @@ class Porfolio {
 				}
 			],
 			template               : tplGrid,              // Handlebars template for grid layout
-			errorMsg               : '<p>Oops. Something went wrong. Please refresh the browser to try again.</p>',
+			errorMsg               : '<p class="error">Oops. Something went wrong. Please select another category.</p>',
 			selectorIntro          : '.intro',             // selector for the category description
 			selectorItem           : '.item-container',    // selector for each grid item
 			selectorItemBg         : '.item-image',        // selector for background image element
@@ -94,7 +94,8 @@ class Porfolio {
 			container      : null, // container for portfolio
 			filterAnchors  : null, // category nav anchors (desktop)
 			filterSelects  : null, // category nav select (tablet/mobile)
-			filterOptions  : null  // category nav options (tablet/mobile)
+			filterOptions  : null, // category nav options (tablet/mobile)
+			errorMsg       : $(this.options.errorMsg)
 		};
 
 		/**
@@ -223,9 +224,10 @@ class Porfolio {
 	 * @param {String} strCategory - category name ('drawings', etc)
 	 */
 	_setCurCategory(strCategory) {
-		let self        = this;
-		let	curCategory = strCategory;
-		let $options    = this.ui.filterOptions;
+		let self         = this;
+		let	curCategory  = strCategory;
+		let $options     = this.ui.filterOptions;
+		let noMatchFound = true;
 
 		this.instance.contentLoader.addLoader();
 
@@ -254,9 +256,34 @@ class Porfolio {
 
 		for (let data of this.instance.dataCategories) {
 			if (data.category === curCategory) {
+				noMatchFound = false;
 				this._displayContent(data);
 			}
 		}
+
+		if (noMatchFound) {
+			this._displayError();
+		}
+	}
+
+	_displayError() {
+		let $error = this.ui.errorMsg;
+
+		this.instance.contentLoader.removeLoader();
+
+		this.ui.container.prepend($error);
+
+		TweenMax.fromTo($error, this.options.animSpeed, {
+			opacity    : 0,
+			y          : -30
+		}, {
+			opacity    : 1,
+			y          : 0,
+			ease       : this.options.animEase,
+			onComplete : function() {
+				$error.removeAttr('style');
+			}
+		});
 	}
 
 	/**

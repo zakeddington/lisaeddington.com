@@ -8,13 +8,18 @@
 	min-height: 80vh;
 	padding: 0;
 
-	.intro {
+	.intro,
+	.error {
 		padding: 0 15px;
 
 		@media (min-width: $desktop-breakpoint-min) {
 			padding: 0 15%;
 			text-align: center;
 		}
+	}
+
+	.error {
+		color: $red;
 	}
 
 	.portfolio-items {
