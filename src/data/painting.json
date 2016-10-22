@@ -8,7 +8,7 @@
 			"image"         : "assets/img/painting/surrounded.jpg"
 		},
 		{
-			"title"         : "We are all Surrounded by Darkness and Light (alternate detail view)",
+			"title"         : "We are all Surrounded by Darkness and Light (detail view)",
 			"description"   : "24x36” | 2016",
 			"image"         : "assets/img/painting/surrounded-detail.jpg"
 		},
@@ -18,7 +18,7 @@
 			"image"         : "assets/img/painting/journey.jpg"
 		},
 		{
-			"title"         : "Journey to the Center of the Mind (alternate detail view)",
+			"title"         : "Journey to the Center of the Mind (detail view)",
 			"description"   : "36x48” | 2016",
 			"image"         : "assets/img/painting/journey-detail.jpg"
 		},
@@ -28,7 +28,7 @@
 			"image"         : "assets/img/painting/happiness.jpg"
 		},
 		{
-			"title"         : "Happiness is Curly Hair (alternate detail view)",
+			"title"         : "Happiness is Curly Hair (detail view)",
 			"description"   : "36x48” | 2015",
 			"image"         : "assets/img/painting/happiness-detail.jpg"
 		},
@@ -38,9 +38,14 @@
 			"image"         : "assets/img/painting/blending.jpg"
 		},
 		{
-			"title"         : "Blending In, or Heavy is the Head Who Wears the Large Bun (alternate detail view)",
+			"title"         : "Blending In, or Heavy is the Head Who Wears the Large Bun (detail view)",
 			"description"   : "36x48” | 2015",
-			"image"         : "assets/img/painting/blending-detail.jpg"
+			"image"         : "assets/img/painting/blending-detail-top.jpg"
+		},
+		{
+			"title"         : "Blending In, or Heavy is the Head Who Wears the Large Bun (detail view)",
+			"description"   : "36x48” | 2015",
+			"image"         : "assets/img/painting/blending-detail-bottom.jpg"
 		}
 	]
 }

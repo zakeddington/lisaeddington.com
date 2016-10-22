@@ -3,6 +3,16 @@
 	"intro"    : "",
 	"items"    : [
 		{
+			"title"         : "Hybrid Moments (Misfits)",
+			"description"   : "2016",
+			"image"         : "assets/img/lettering/hybrid-moments.jpg"
+		},
+		{
+			"title"         : "I Just Can’t Be Happy Today (The Damned)",
+			"description"   : "2016",
+			"image"         : "assets/img/lettering/i-just-cant-be-happy-today.jpg"
+		},
+		{
 			"title"         : "Room Without a Window (Operation Ivy)",
 			"description"   : "2016",
 			"image"         : "assets/img/lettering/room-without-a-window.jpg"
